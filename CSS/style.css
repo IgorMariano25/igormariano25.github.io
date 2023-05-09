@@ -97,3 +97,11 @@
     text-decoration: none;
     max-width: 225px;
 }
+
+#email-container #email-logo{
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 5px;
+    max-width: 25px;
+    max-height: 25px;
+}
