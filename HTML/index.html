@@ -5,9 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio Igor Mariano</title>
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!--CSS DO PROJETO-->
     <link rel="stylesheet" href="/CSS/style.css">
+
+    <!--DEV ICON FONTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
-    
+    <main id="container">
+        <aside id="bio-container">
+            <h1>Igor Mariano</h1>
+            <img id="bio-image" src="/img/ProfilePhoto.jpg" alt="Foto de perfil Igor Mariano">
+            <p>Olá, meu nome é Igor Mariano e sou <span class="highlight">Desenvolvedor Full-Stack</span></p>
+            <p id="welcome-text">Seja bem-vindo !</p>
+            <ul id="social-container">
+                <li><a href="https://www.linkedin.com/in/igormarianodev" target="_blank"><ion-icon name="logo-linkedin"></a></li>
+                <li><a href="https://github.com/IgorMariano25" target="_blank"><ion-icon name="logo-github"></a></li>
+                <li><a href="https://www.instagram.com/igor.mariano_/" target="_blank"><ion-icon name="logo-instagram"></a></li>
+            </ul>
+            <div id="email-container">
+                <ion-icon id="email-logo" name="mail-outline"></ion-icon><a href="mailto:igor-mariano@outlook.com">igor-mariano@outlook.com</a>
+            </div>
+        </aside>
+        <section id="about-container">
+            <h1 id="name">Igor Mariano</h1>
+            <p id="title"><span class="highlight">Desenvolvedor Full-Stack</span></p>
+
+            <p class="description">
+                Sou estudante do curso de <span class="italic-span"><a href="https://www.ibmec.br/graduacao/full-stack-development" target="_blank">Análise e Desenvolvimento de Sistemas</a>
+                </span>da istituição de ensino <span class="italic-span"><a href="https://www.ibmec.br" target="_blank">Ibmec</a></span> e atualmente estou no 3º período do curso.
+            </p>
+
+            <p class="description">As disciplinas que estou cursando no momento são: 
+                🏗️🎲<span class="highlight-subject"> Engenharia de Dados</span>, 
+                🚧📱<span class="highlight-subject">Projeto Mobile</span>,
+                🧱🎲<span class="highlight-subject">Estrutura de Dados</span> e 
+                💻📱<span class="highlight-subject">Desenvolvimento Mobile</span>
+            </p>
+
+            <a href="https://github.com/IgorMariano25" id="btn-projects"><ion-icon name="share-social-outline"></ion-icon><span>Ver Projetos</span></a>
+
+            <h2 id="skills-section-title">Minhas Skills</h2>
+            <p class="description">Conheça as tecnologias que eu domino</p>
+            <div class="skills-container">
+                <div class="skills-box">
+                    <p class="skill-title">Front-End</p>
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skill-title">Back-End</p>
+                    <i class="devicon-java-plain colored"></i>
+                    <i class="devicon-c-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skill-title">Mobile</p>
+                    <i class="devicon-kotlin-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skill-title">Front-End Frameworks</p>
+                    <i class="devicon-react-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skill-title">Ferramentas</p>
+                    <i class="devicon-vscode-plain colored"></i>
+                    <i class="devicon-androidstudio-plain colored"></i>
+                    <i class="devicon-windows8-plain colored"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--ION ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
