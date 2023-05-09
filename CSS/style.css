@@ -113,3 +113,8 @@
     background-color: var(--about-background-color);
     padding: 50px;
 }
+
+#name{
+    font-size: 42px;
+    margin-bottom: 15px;
+}
