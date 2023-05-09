@@ -86,3 +86,8 @@
     justify-content: center;
     align-items: center;
 }
+
+#email-container ionc-icon,
+#email-container a{
+    flex: 1 1 0;
+}
