@@ -120,6 +120,11 @@
     text-underline-offset: 4px;
     text-decoration: 3px solid underline var(--main-color);
     color: var(--main-text-color);
+    transition: 0.3s;
+}
+
+#about-container .italic-span a:hover{
+    font-size: 18px;
 }
 
 #name{
