@@ -183,3 +183,8 @@
     padding-left: 10px;
     border-left: 5px solid var(--main-color);
 }
+
+.skills-box i{
+    font-size: 45px;
+    margin-right: 10px;
+}
