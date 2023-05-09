@@ -1,4 +1,4 @@
-/* General */
+/* Reset */
 * {
     padding: 0;
     margin: 0;
@@ -6,6 +6,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-h1{
-    color:red;
+/* Variables */
+:root{
+    --main-color: #54b689;
+    --main-text-color: #fff;
+    --border-color: #999;
+    --bio-background-color: #1E2A3A;
+    --bio-border-color: #293544;
+    --about-background-color: #111821;
 }
