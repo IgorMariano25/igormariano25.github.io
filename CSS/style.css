@@ -138,3 +138,20 @@
     text-align: center;
     display: flex;
 }
+
+#btn-projects ion-icon,
+#btn-projects span{
+    flex: 1 1 0;
+}
+
+#btn-projects ion-icon{
+    font-size: 20px;
+    max-width: 20px;
+}
+
+#btn-projects:hover{
+    background-color: transparent;
+    border-radius: 30px;
+    box-shadow: 0px 0px 25px -10px var(--main-color);
+    width: 175px;
+}
