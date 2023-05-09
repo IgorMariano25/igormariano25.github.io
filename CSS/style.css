@@ -213,3 +213,10 @@
     font-size: 55px;
     margin-right: 12px;
 }
+
+/* Mobile */
+@media(max-width: 450px){
+    #container {
+        flex-direction: column;
+    }
+}
