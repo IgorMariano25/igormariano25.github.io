@@ -75,3 +75,8 @@
     flex: 1 1 0;
     max-width: 60px;
 }
+
+#social-container li a{
+    color: var(--main-color);
+    font-size: 35px;
+}
