@@ -19,6 +19,8 @@
 /* General */
 .highlight{
     color: var(--main-color);
+    font-weight: bolder;
+    font-style: italic;
 }
 
 /* Containers */
