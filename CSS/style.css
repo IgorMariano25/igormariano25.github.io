@@ -15,3 +15,8 @@
     --bio-border-color: #293544;
     --about-background-color: #111821;
 }
+
+/* General */
+.highlight{
+    color: var(--main-color);
+}
