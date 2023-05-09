@@ -61,3 +61,12 @@
 #bio-container #welcome-text {
     font-weight: bold;
 }
+
+#social-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-bottom: 1px var(--border-color);
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+}
