@@ -61,7 +61,8 @@
     list-style: none;
     border-bottom: 1px var(--border-color);
     margin-bottom: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
 }
 
 #social-container li {
