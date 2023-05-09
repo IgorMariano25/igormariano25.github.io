@@ -77,6 +77,10 @@
     font-size: 35px;
 }
 
+#social-container ion-icon:hover{
+    transform: scale(1.4);
+}
+
 #email-container {
     display: flex;
     justify-content: center;
