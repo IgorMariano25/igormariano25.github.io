@@ -105,3 +105,11 @@
     max-width: 25px;
     max-height: 25px;
 }
+
+/*About container*/
+#about-container{
+    flex: 1 1 80%;
+    min-height: 100vh;
+    background-color: var(--about-background-color);
+    padding: 50px;
+}
