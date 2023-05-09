@@ -175,3 +175,11 @@
     max-width: 33%;
     margin-bottom: 35px;
 }
+
+.skills-title{
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 5px solid var(--main-color);
+}
