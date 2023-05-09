@@ -114,6 +114,14 @@
     padding: 50px;
 }
 
+#about-container .italic-span a{
+    font-style: italic;
+    font-weight:bolder;
+    text-underline-offset: 4px;
+    text-decoration: 3px solid underline var(--main-color);
+    color: var(--main-text-color);
+}
+
 #name{
     font-size: 42px;
     margin-bottom: 15px;
