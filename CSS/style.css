@@ -245,4 +245,9 @@
         margin-bottom: 5px;
         margin-top: 5px;
     }
+
+    #bio-container p{
+        max-width: 60%;
+        margin: 10px auto;
+    }
 }
