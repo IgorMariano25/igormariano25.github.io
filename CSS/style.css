@@ -28,13 +28,6 @@
     color: var(--main-text-color);
 }
 
-#about-container{
-    flex: 1 1 80%;
-    min-height: 100vh;
-    background-color: var(--about-background-color);
-    padding: 50px;
-}
-
 /* Bio Container*/
 
 #bio-container {
@@ -128,4 +121,20 @@
 .description{
     max-width: 75%;
     margin-bottom: 10px;
+}
+
+#btn-projects{
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--main-text-color);
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .5s;
+    margin: 25px 0;
+    padding: 12px 10px;
+    width: 150px;
+    text-align: center;
+    display: flex;
 }
