@@ -57,3 +57,7 @@
 #bio-container p {
     margin-bottom: 20px;
 }
+
+#bio-container #welcome-text {
+    font-weight: bold;
+}
