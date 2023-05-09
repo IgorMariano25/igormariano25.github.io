@@ -255,4 +255,11 @@
         text-align: center;
         padding: 30px;
     }
+
+    #about-container .description{
+        margin: 15px auto;
+        max-width: 100%;
+        line-height: 30px;
+        text-align: left;
+    }
 }
