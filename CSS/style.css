@@ -172,7 +172,6 @@
 
 .skills-box{
     flex: 1 1 33%;
-    margin-bottom: 25px;
-    font-weight: bold;
-    border-left: 5px solid var(--main-color);
+    max-width: 33%;
+    margin-bottom: 35px;
 }
