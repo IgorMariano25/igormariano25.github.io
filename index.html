@@ -1,93 +1,346 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio Igor Mariano</title>
-    <!-- GOOGLE FONTS-->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Mitr:wght@500;600&family=Open+Sans:ital@0;1&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
-    <!--CSS DO PROJETO-->
-    <link rel="stylesheet" href="/CSS/style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- FavIcon -->
+    <link rel="icon" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg'
+     viewBox='0 0 100 100' width='64' height='64'> <text y='.9em' font-size='85'>💚</text>
+    </svg>">
 
-    <!--DEV ICON FONTS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <title>Portfólio</title>
 </head>
+
 <body>
-    <main id="container">
-        <aside id="bio-container">
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <a href="#home" class="logo">Igor Mariano</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Sobre</a>
+            <a href=" #services">Conhecimentos</a>
+            <a href=" #portfolio">Portfólio</a>
+        </nav>
+    </header>
+
+    <!-- home section  -->
+    <section class=" home" id="home">
+        <div class="home-content">
+            <h3>Oi, eu sou o</h3>
             <h1>Igor Mariano</h1>
-            <img id="bio-image" src="/img/ProfilePhotoGitHub.jpg" alt="Foto de perfil Igor Mariano">
-            <p>Olá, meu nome é Igor Mariano e sou <span class="highlight">Desenvolvedor Full-Stack</span></p>
-            <p id="welcome-text">Seja bem-vindo !</p>
-            <ul id="social-container">
-                <li><a href="https://www.linkedin.com/in/igormarianodev" target="_blank"><ion-icon name="logo-linkedin"></a></li>
-                <li><a href="https://github.com/IgorMariano25" target="_blank"><ion-icon name="logo-github"></a></li>
-                <li><a href="https://www.instagram.com/igor.mariano_/" target="_blank"><ion-icon name="logo-instagram"></a></li>
-            </ul>
-            <div id="email-container">
-                <ion-icon id="email-logo" name="mail-outline"></ion-icon><a href="mailto:igor-mariano@outlook.com">igor-mariano@outlook.com</a>
-            </div>
-        </aside>
-        <section id="about-container">
-            <h1 id="name">Igor Mariano</h1>
-            <p id="title"><span class="highlight">Desenvolvedor Full-Stack</span></p>
-
-            <p class="description">
-                Sou estudante do curso de <span class="italic-span"><a href="https://www.ibmec.br/graduacao/full-stack-development" target="_blank">Análise e Desenvolvimento de Sistemas</a>
-                </span>da istituição de ensino <span class="italic-span"><a href="https://www.ibmec.br" target="_blank">Ibmec</a></span> e atualmente estou no 3º período do curso.
+            <h3>Estudante de <span class="multiple-text"></span></h3>
+            <p>Estou cursando o 5º Semestre de Análise e Desenvolvimento de Sistemas na instituição de ensino Ibmec. Meu
+                foco nos estudos é na área de
+                Front-end no desenvolvimento Web.
             </p>
+            <div class="social-media">
+                <a href="https://github.com/IgorMariano25" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
 
-            <p class="description">As disciplinas que estou cursando no momento são: 
-                🏗️🎲<span class="highlight-subject"> Engenharia de Dados</span>, 
-                🚧📱<span class="highlight-subject">Projeto Mobile</span>,
-                🧱🎲<span class="highlight-subject">Estrutura de Dados</span> e 
-                💻📱<span class="highlight-subject">Desenvolvimento Mobile</span>
+                <a href="https://www.linkedin.com/in/igormarianodev/" target="_blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+
+                <a href="https://api.whatsapp.com/send/?phone=5521988431009&text&type=phone_number&app_absent=0"
+                    target="_blank">
+                    <i class='bx bxl-whatsapp'></i>
+                </a>
+
+                <a href="mailto:igor-mariano@outlook.com" target="_blank">
+                    <i class='bx bx-envelope'></i>
+                </a>
+            </div>
+            <a href="Currículo_Igor_Mariano.pdf" download class="btn">Download Currículo</a>
+        </div>
+
+        <div class="home-img">
+            <img src="/images/Coding.svg" alt="">
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="./images/about_me_4.svg" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">Sobre <span>Mim</span></h2>
+            <h3>Futuro desenvolvedor front-end</h3>
+            <p>Me chamo Igor Mariano Lopes Rodrigues, sou estudante de Análise e Desenvolviemnto de
+                Sistemas,
+                estou no 5º Semestre e minha previsão de formatura é 2024.1. Gosto muito de tecnologias e
+                pretendo
+                seguir uma carreira
+                como desenvolvedor web.
             </p>
+            <p>No meu tempo livre, gosto de práticar atividades físcas como corrida e musculação. Além
+                disso, gosto
+                muito de ler e escutar música enquanto programo.</p>
+        </div>
+    </section>
 
-            <div id="buttons-informations">
-                <a href="https://github.com/IgorMariano25?tab=repositories" target="_blank" class="btn-info"><ion-icon name="share-social-outline"></ion-icon><span>Ver projetos</span></a>
-                <a href="https://drive.google.com/file/d/1HZCydYej3ZUHDRo915RSzuNF-soXbag0/view?usp=sharing" target="_blank" class="btn-info"><ion-icon name="document-outline"></ion-icon><span>Ver currículo</span></a>
+    <!-- services section -->
+    <section class="services" id="services">
+        <h2 class="heading">Meus <span>Conhecimentos</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bxl-html5'></i>
+                <h3>HTML</h3>
+                <p>É uma linguagem de marcação utilizada na criação e estruturação de páginas web, definindo a
+                    apresentação e organização de conteúdo a ser exibido.
+                </p>
             </div>
 
-            <h2 id="skills-section-title">Minhas Skills</h2>
-            <p class="description">Conheça as tecnologias que eu domino</p>
-            <div class="skills-container">
-                <div class="skills-box">
-                    <p class="skill-title">Front-End</p>
-                    <i class="devicon-html5-plain colored"></i>
-                    <i class="devicon-css3-plain colored"></i>
-                    <i class="devicon-javascript-plain colored"></i>
-                </div>
-                <div class="skills-box">
-                    <p class="skill-title">Back-End</p>
-                    <i class="devicon-java-plain colored"></i>
-                    <i class="devicon-c-plain colored"></i>
-                </div>
-                <div class="skills-box">
-                    <p class="skill-title">Mobile</p>
-                    <i class="devicon-kotlin-plain colored"></i>
-                </div>
-                <div class="skills-box">
-                    <p class="skill-title">Front-End Frameworks</p>
-                    <i class="devicon-react-plain colored"></i>
-                </div>
-                <div class="skills-box">
-                    <p class="skill-title">Ferramentas</p>
-                    <i class="devicon-vscode-plain colored"></i>
-                    <i class="devicon-androidstudio-plain colored"></i>
-                    <i class="devicon-windows8-plain colored"></i>
-                    <i class="devicon-git-plain colored"></i>
+            <div class="services-box">
+                <i class='bx bxl-css3'></i>
+                <h3>CSS</h3>
+                <p>É uma linguagem de estilo que defini a apresentação e o layout de
+                    documentos HTML, permitindo controlar a estética, como cores, fontes e posicionamento.
+                </p>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxl-javascript'></i>
+                <h3>JavaScript</h3>
+                <p>É uma linguagem de programação versátil e amplamente usada para desenvolvimento web,
+                    ajudando na
+                    interatividade e dinamismo.
+                </p>
+            </div>
+
+            <!-- <div class="services-box">
+                <i class='bx bxl-bootstrap'></i>
+                <h3>Bootstrap</h3>
+                <p>Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de
+                    interface.
+                </p>
+            </div> -->
+
+            <!-- <div class="services-box">
+                <i class='bx bxl-react'></i>
+                <h3>React</h3>
+                <p>O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de
+                    usuário em páginas web.
+                </p>
+            </div> -->
+
+            <div class="services-box">
+                <i class='bx bxl-typescript'></i>
+                <h3>TypeScript</h3>
+                <p>É uma linguagem de programação desenvolvida pela Microsoft, que se baseia em JavaScript e
+                    adiciona
+                    tipagem estática.
+                </p>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxl-angular'></i>
+                <h3>Angular</h3>
+                <p>É um framework de desenvolvimento front-end mantido pelo Google, usado para criar
+                    aplicativos web dinâmicos e interativos.
+                </p>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxl-git'></i>
+                <h3>Git</h3>
+                <p>É um sistema de controle de versão que rastreia alterações em arquivos de código-fonte
+                    durante o
+                    desenvolvimento de software.
+                </p>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxl-figma'></i>
+                <h3>Figma</h3>
+                <p>É uma plataforma de design colaborativo utilizada para criar interfaces de
+                    usuário, protótipos e designs interativos otimizando o desenvolvimento e a comunicação
+                    no design de
+                    produtos digitais.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- portfolio section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Últimos <span>Projetos</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="/images/greey-wheight.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>FitnessApp</h4>
+                    <p>
+                        <i class='bx bxl-android'></i>
+                    </p>
+                    <a href="./projetos/Cartão de Crédito/cartao-credito.html" target="_blank"><i
+                            class='bx bx-link-external'></i></a>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!--ION ICONS-->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <div class="portfolio-box">
+                <img src="/images/Mario-Bros-2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <div id="mario">
+                        <h4>Web Site filme - Mario Bros</h4>
+                        <p>
+                            <i class='bx bxl-html5'></i>
+                            <i class='bx bxl-css3'></i>
+                            <i class='bx bxl-typescript'></i>
+                            <i class='bx bxl-angular'></i>
+                        </p>
+                        <a href="/projetos/Login - Instagram/index.html" target="_blank"><i
+                                class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/Harvey-Specter.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Projeto Themis</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                        <i class='bx bxl-javascript'></i>
+                    </p>
+                    <a href="./projetos/Jogo da Velha/index.html" target="_blank"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/purple-computer.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Login Page</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                    </p>
+                    <a href="./projetos/Login-Page/login-page.html" target="_blank"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/teclado.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Formulário</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                    </p>
+                    <a href="./projetos/Lampada_CSS/index.html" target="_blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="/images/blue-computer.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Ibtech</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                        <i class='bx bxl-javascript'></i>
+                        <i class='bx bxl-react'></i>
+                    </p>
+                    <a href="https://ibtech.sendodigital.com/" target="_blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/Luxury-Cars-Garage.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Colecionador de Carros</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                        <i class='bx bxl-javascript'></i>
+                        <i class='bx bxl-angular'></i>
+                        <i class='bx bxl-java'></i>
+                        <i class='bx bxl-spring-boot'></i>
+                    </p>
+                    <a href="./projetos/Quiz/quiz.html" target="_blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="/images/ferrari-garage.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Projeto Ikaros</h4>
+                    <p>
+                        <i class='bx bxl-html5'></i>
+                        <i class='bx bxl-css3'></i>
+                        <i class='bx bxl-javascript'></i>
+                        <i class='bx bxl-angular'></i>
+                        <i class='bx bxl-java'></i>
+                        <i class='bx bxl-spring-boot'></i>
+                    </p>
+                    <a href="./projetos/Quiz/quiz.html" target="_blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <!-- <section class="contact" id="contact">
+        <h2 class="heading">Fale <span>Comigo!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Nome Completo">
+                <input type="email" placeholder="email@mail.com">
+            </div>
+
+            <div class="input-box">
+                <input type="number" placeholder="(11) 99999-9999">
+                <input type="text" placeholder="Email Assunto">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Sua mensagem"></textarea>
+            <input type="submit" value="Enviar" class="btn">
+        </form>
+    </section> -->
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 Desenvolvido por: <span>Igor Mariano</span></p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- revelar scroll -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- js principal -->
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
