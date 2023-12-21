@@ -133,8 +133,6 @@ section {
     }
 }
 
-
-
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: bold;
@@ -342,9 +340,10 @@ span {
     width: auto;
     height: 550px;
 }
+
 .portfolio-box img {
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
     transition: .5s ease;
 }
 
