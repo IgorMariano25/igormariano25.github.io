@@ -228,6 +228,47 @@ span {
     margin: 2rem 0 3rem;
 }
 
+/* Setup */
+.setup {
+    background: var(--second-bg-color);
+}
+
+.setup-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10rem;
+    margin-top: 4rem;
+}
+
+#notebook,
+#perifericos {
+}
+
+.setup-img img {
+    width: 28vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.setup-content h2 {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.setup-content h3 {
+    font-size: 3rem;
+    padding-top: 2.5rem;
+}
+
+.setup-content p {
+    font-size: 2rem;
+    margin: 1rem 2rem 0rem 2rem;
+}
+
 /* Services */
 
 .services h2 {
