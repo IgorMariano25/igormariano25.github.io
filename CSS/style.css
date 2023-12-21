@@ -108,6 +108,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--second-bg-color);
 }
 
 .home-img img {
@@ -336,6 +337,7 @@ span {
     overflow: hidden;
     display: flex;
 }
+
 .portfolio-box {
     width: auto;
     height: 550px;
