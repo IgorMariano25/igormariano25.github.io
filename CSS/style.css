@@ -32,6 +32,24 @@ section {
     padding: 2rem 9% 2rem;
 }
 
+/* ScrollBar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--second-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
 /* Header */
 .header {
     position: fixed;
