@@ -250,6 +250,58 @@ span {
 /* Setup */
 .setup {
     background: var(--second-bg-color);
+    padding: 2rem 9%;
+}
+
+.setup-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10rem;
+    margin-top: 4rem;
+    flex-wrap: wrap; /* Ensure the content wraps on smaller screens */
+}
+
+#notebook,
+#perifericos {
+    flex: 1 1 45%; /* Ensure the sections take up equal space */
+    margin-bottom: 2rem; /* Add some margin at the bottom */
+}
+
+.setup-img img {
+    width: 25vw;
+    /* min-width: 200px;  */
+    margin: 0 auto;
+    display: block; 
+}
+
+.setup-content h3 {
+    font-size: 3rem;
+    padding-top: 2.5rem;
+}
+
+.setup-content p {
+    font-size: 2rem;
+    margin: 1rem 2rem 0rem 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .setup-content {
+        flex-direction: column; /* Stack the content vertically on smaller screens */
+        align-items: center; /* Center the content */
+    }
+
+    #notebook,
+    #perifericos {
+        width: 100%; /* Make the sections take full width */
+        text-align: center; /* Center the text */
+    }
+
+    .setup-img img {
+        max-width: 90vw; /* Adjust the maximum width for smaller screens */
+        min-width: 200px; /* Ensure the image doesn't get too small */
+    }
 }
 
 .setup-content {
@@ -637,6 +689,9 @@ span {
         width: 90vw;
     }
 
+    .setup-img img {
+        width: 90vw;
+    }
 
     .footer-iconTop {
         display: none;
