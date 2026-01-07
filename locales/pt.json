@@ -1,0 +1,140 @@
+{
+    "nav": {
+        "home": "Início",
+        "about": "Sobre",
+        "experience": "Experiência",
+        "skills": "Habilidades",
+        "portfolio": "Portfólio"
+    },
+    "hero": {
+        "greeting": "Olá, eu sou",
+        "name": "Igor Mariano",
+        "role": "Desenvolvedor de Software",
+        "specialty": "Especialista em Geolocalização & Logística",
+        "description": "Desenvolvedor Júnior I atuando em empresas de gestão logística e last mile. Especializado em geolocalização de endereços, scoring, delimitadores geográficos e otimização de entregas.",
+        "downloadCV": "Download Currículo",
+        "viewWork": "Ver Projetos"
+    },
+    "about": {
+        "title": "Sobre mim",
+        "subtitle": "Desenvolvedor de Software Júnior I",
+        "intro": "Sou estudante de Engenharia de Software (7º período) no Ibmec e formado em Análise e Desenvolvimento de Sistemas, também pelo Ibmec. Fui aluno Ibmec Star (CR ≥ 9) em ambas as graduações. Atualmente, meu foco de carreira está em desenvolvimento web e na construção de plataformas SaaS.",
+        "passion": "Apaixonado por tecnologia, busco constantemente aprimorar minhas habilidades em desenvolvimento front-end e back-end. Nas horas vagas, pratico corrida, muay thai e musculação. Também gosto de ler e ouvir música enquanto programo.",
+        "education": "Formação prevista em Engenharia de Software: 2026.2\nFormado em Análise e Desenvolvimento de Sistemas: 2024.2"
+    },
+    "experience": {
+        "title": "Experiência Profissional",
+        "current": "Atual",
+        "envoy": {
+            "company": "Envoy",
+            "role": "Desenvolvedor de Software Júnior I",
+            "period": "2023 - Presente",
+            "description": "Atuação em projetos de gestão logística e last mile delivery",
+            "responsibilities": [
+                "Correção e validação de geolocalizações de endereços",
+                "Desenvolvimento de processos de pontuação (scoring) de endereços",
+                "Definição e análise de delimitadores geográficos",
+                "Implementação de áreas de entrega, risco e fraude",
+                "Trabalho com zip codes e geometrias espaciais (polígonos e círculos)",
+                "Otimização de rotas de entrega usando algoritmos de geolocalização"
+            ]
+        },
+        "euEntrego": {
+            "company": "Eu Entrego",
+            "role": "Desenvolvedor de Software Júnior I",
+            "period": "2023 - Presente",
+            "description": "Desenvolvimento de soluções para logística de última milha",
+            "responsibilities": [
+                "Integração de APIs de geolocalização",
+                "Validação e normalização de endereços",
+                "Desenvolvimento de features para otimização de entregas"
+            ]
+        }
+    },
+    "skills": {
+        "title": "Habilidades & Tecnologias",
+        "categories": {
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "tools": "Ferramentas",
+            "geolocation": "Geolocalização"
+        },
+        "geolocation": {
+            "title": "Especialização em Geolocalização",
+            "items": {
+                "geocoding": "Geocodificação & Validação de Endereços",
+                "scoring": "Scoring & Qualidade de Dados Geográficos",
+                "boundaries": "Delimitadores Geográficos (Polígonos & Círculos)",
+                "areas": "Áreas de Entrega, Risco e Fraude",
+                "zipcodes": "Gestão de Zip Codes & CEPs",
+                "routing": "Otimização de Rotas de Entrega"
+            }
+        },
+        "html": "Linguagem de marcação para estruturação de páginas web",
+        "css": "Linguagem de estilo para design e layout responsivo",
+        "javascript": "Linguagem de programação para interatividade web",
+        "typescript": "JavaScript com tipagem estática para maior segurança",
+        "angular": "Framework front-end para aplicações web dinâmicas",
+        "react": "Biblioteca JavaScript para interfaces de usuário",
+        "reactNative": "Framework para desenvolvimento mobile multiplataforma",
+        "java": "Linguagem de programação robusta e multiplataforma",
+        "springBoot": "Framework Java para aplicações escaláveis",
+        "firebase": "Plataforma Google para desenvolvimento mobile e web",
+        "git": "Sistema de controle de versão distribuído",
+        "github": "Plataforma de hospedagem e colaboração de código",
+        "gitlab": "Plataforma DevOps com CI/CD integrado",
+        "bitbucket": "Plataforma de repositórios Git com integração Jira",
+        "slack": "Plataforma de comunicação e colaboração em equipe",
+        "datadog": "Plataforma de monitoramento e observabilidade""figma": "Ferramenta colaborativa de design de interfaces"
+    },
+    "portfolio": {
+        "title": "Projetos em Destaque",
+        "viewProject": "Ver Projeto",
+        "projects": {
+            "fitnessApp": {
+                "title": "FitnessApp",
+                "description": "Aplicativo mobile de fitness e treinos"
+            },
+            "marioBros": {
+                "title": "Website Filme Mario Bros",
+                "description": "Landing page promocional com design moderno"
+            },
+            "themis": {
+                "title": "Projeto Themis",
+                "description": "Sistema de gestão jurídica"
+            },
+            "loginPage": {
+                "title": "Login Page",
+                "description": "Interface de autenticação moderna"
+            },
+            "form": {
+                "title": "Formulário Interativo",
+                "description": "Formulário com validação em tempo real"
+            },
+            "ibtech": {
+                "title": "Ibtech",
+                "description": "Plataforma educacional"
+            },
+            "cars": {
+                "title": "Colecionador de Carros",
+                "description": "Sistema full-stack para gestão de coleções"
+            },
+            "ikaros": {
+                "title": "Projeto Ikaros",
+                "description": "Aplicação empresarial complexa"
+            }
+        }
+    },
+    "footer": {
+        "copyright": "Desenvolvido por",
+        "rights": "Todos os direitos reservados"
+    },
+    "aria": {
+        "menu": "Menu de navegação",
+        "toggleMenu": "Alternar menu",
+        "social": "Redes sociais",
+        "backToTop": "Voltar ao topo",
+        "languageSelector": "Seletor de idioma",
+        "themeToggle": "Alternar tema"
+    }
+}

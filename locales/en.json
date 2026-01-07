@@ -1,0 +1,143 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "experience": "Experience",
+        "skills": "Skills",
+        "portfolio": "Portfolio"
+    },
+    "hero": {
+        "greeting": "Hi, I'm",
+        "name": "Igor Mariano",
+        "role": "Software Developer",
+        "specialty": "Geolocation & Logistics Specialist",
+        "description": "Junior Software Developer I working at logistics and last mile companies. Specialized in address geolocation, scoring, geographic boundaries, and delivery optimization.",
+        "downloadCV": "Download Resume",
+        "viewWork": "View Projects"
+    },
+    {
+        "about": {
+            "title": "About Me",
+            "subtitle": "Junior Software Developer I",
+            "intro": "I am a Software Engineering student (7th semester) at Ibmec and hold a degree in Systems Analysis and Development, also from Ibmec. I was recognized as an Ibmec Star student (GPA ≥ A+) in both programs. Currently, my career focus is on web development and building SaaS platforms.",
+            "passion": "Passionate about technology, I am constantly improving my front-end and back-end development skills. In my free time, I practice running, Muay Thai, and strength training. I also enjoy reading and listening to music while coding.",
+            "education": "Expected graduation in Software Engineering: 2026.2\nBachelor's degree in Systems Analysis and Development: 2024.2"
+        }
+    }
+
+  "experience": {
+        "title": "Professional Experience",
+        "current": "Current",
+        "envoy": {
+            "company": "Envoy",
+            "role": "Junior Software Developer I",
+            "period": "2023 - Present",
+            "description": "Working on logistics management and last mile delivery projects",
+            "responsibilities": [
+                "Address geolocation correction and validation",
+                "Development of address scoring processes",
+                "Definition and analysis of geographic boundaries",
+                "Implementation of delivery, risk, and fraud areas",
+                "Work with zip codes and spatial geometries (polygons and circles)",
+                "Delivery route optimization using geolocation algorithms"
+            ]
+        },
+        "euEntrego": {
+            "company": "Eu Entrego",
+            "role": "Junior Software Developer I",
+            "period": "2023 - Present",
+            "description": "Development of last mile logistics solutions",
+            "responsibilities": [
+                "Geolocation API integration",
+                "Address validation and normalization",
+                "Feature development for delivery optimization"
+            ]
+        }
+    },
+    "skills": {
+        "title": "Skills & Technologies",
+        "categories": {
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "tools": "Tools",
+            "geolocation": "Geolocation"
+        },
+        "geolocation": {
+            "title": "Geolocation Specialization",
+            "items": {
+                "geocoding": "Geocoding & Address Validation",
+                "scoring": "Scoring & Geographic Data Quality",
+                "boundaries": "Geographic Boundaries (Polygons & Circles)",
+                "areas": "Delivery, Risk, and Fraud Areas",
+                "zipcodes": "Zip Code & Postal Code Management",
+                "routing": "Delivery Route Optimization"
+            }
+        },
+        "html": "Markup language for web page structure",
+        "css": "Style language for responsive design and layout",
+        "javascript": "Programming language for web interactivity",
+        "typescript": "JavaScript with static typing for enhanced safety",
+        "angular": "Front-end framework for dynamic web applications",
+        "react": "JavaScript library for user interfaces",
+        "reactNative": "Framework for cross-platform mobile development",
+        "java": "Robust and platform-independent programming language",
+        "springBoot": "Java framework for scalable applications",
+        "firebase": "Google platform for mobile and web development",
+        "git": "Distributed version control system",
+        "github": "Code hosting and collaboration platform",
+        "gitlab": "DevOps platform with integrated CI/CD",
+        "bitbucket": "Git repository platform with Jira integration",
+        "slack": "Team communication and collaboration platform",
+        "datadog": "Monitoring and observability platform""figma": "Collaborative interface design tool"
+    },
+    "portfolio": {
+        "title": "Featured Projects",
+        "viewProject": "View Project",
+        "projects": {
+            "fitnessApp": {
+                "title": "FitnessApp",
+                "description": "Mobile fitness and workout application"
+            },
+            "marioBros": {
+                "title": "Mario Bros Movie Website",
+                "description": "Promotional landing page with modern design"
+            },
+            "themis": {
+                "title": "Themis Project",
+                "description": "Legal management system"
+            },
+            "loginPage": {
+                "title": "Login Page",
+                "description": "Modern authentication interface"
+            },
+            "form": {
+                "title": "Interactive Form",
+                "description": "Form with real-time validation"
+            },
+            "ibtech": {
+                "title": "Ibtech",
+                "description": "Educational platform"
+            },
+            "cars": {
+                "title": "Car Collector",
+                "description": "Full-stack collection management system"
+            },
+            "ikaros": {
+                "title": "Ikaros Project",
+                "description": "Complex enterprise application"
+            }
+        }
+    },
+    "footer": {
+        "copyright": "Developed by",
+        "rights": "All rights reserved"
+    },
+    "aria": {
+        "menu": "Navigation menu",
+        "toggleMenu": "Toggle menu",
+        "social": "Social media",
+        "backToTop": "Back to top",
+        "languageSelector": "Language selector",
+        "themeToggle": "Toggle theme"
+    }
+}

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Igor Mariano - Software Developer specialized in geolocation, logistics, and last mile delivery solutions. Junior Developer with expertise in address scoring, geographic boundaries, and delivery optimization.">
+    <meta name="keywords"
+        content="software developer, geolocation, logistics, last mile, address validation, geocoding, scoring, full-stack developer, Igor Mariano">
+    <meta name="author" content="Igor Mariano">
+    <meta name="theme-color" content="#22C55E">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://igormariano25.github.io/">
+    <meta property="og:title" content="Igor Mariano - Software Developer | Geolocation Specialist">
+    <meta property="og:description"
+        content="Junior Software Developer specialized in geolocation, logistics, and last mile delivery solutions.">
+    <meta property="og:image" content="https://igormariano25.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://igormariano25.github.io/">
+    <meta property="twitter:title" content="Igor Mariano - Software Developer | Geolocation Specialist">
+    <meta property="twitter:description"
+        content="Junior Software Developer specialized in geolocation, logistics, and last mile delivery solutions.">
+    <meta property="twitter:image" content="https://igormariano25.github.io/images/og-image.jpg">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='64' height='64'><text y='.9em' font-size='85'>💚</text></svg>">
+
+    <!-- CSS - Load in correct order -->
+    <link rel="stylesheet" href="./assets/css/tokens.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <title>Igor Mariano - Software Developer | Geolocation Specialist</title>
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Igor Mariano Lopes Rodrigues",
+      "jobTitle": "Junior Software Developer I",
+      "description": "Software Developer specialized in geolocation, logistics, and last mile delivery solutions",
+      "url": "https://igormariano25.github.io/",
+      "sameAs": [
+        "https://github.com/IgorMariano25",
+        "https://www.linkedin.com/in/igormarianodev/"
+      ],
+      "knowsAbout": [
+        "Geolocation",
+        "Address Validation",
+        "Geocoding",
+        "Logistics",
+        "Last Mile Delivery",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Angular",
+        "Java",
+        "Spring Boot"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to main content link (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <a href="#home" class="logo" aria-label="Igor Mariano - Home">
+                <span class="logo__text">Igor Mariano</span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="main-navigation">
+                <i class='bx bx-menu' aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link nav__link--active" data-i18n="nav.home">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link" data-i18n="nav.about">Sobre</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link" data-i18n="nav.experience">Experiência</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link" data-i18n="nav.skills">Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link" data-i18n="nav.portfolio">Portfólio</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Language Selector -->
+            <div class="language-selector" role="group" aria-label="Language selector">
+                <button class="language-btn language-btn--active" data-lang="pt" aria-label="Português"
+                    title="Português">
+                    PT
+                </button>
+                <button class="language-btn" data-lang="en" aria-label="English" title="English">
+                    EN
+                </button>
+                <button class="language-btn" data-lang="es" aria-label="Español" title="Español">
+                    ES
+                </button>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <i class='bx bx-moon' aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <p class="hero__greeting" data-i18n="hero.greeting">Olá, eu sou</p>
+                        <h1 class="hero__name">
+                            <span class="gradient-text" data-i18n="hero.name">Igor Mariano</span>
+                        </h1>
+                        <h2 class="hero__role">
+                            <span data-i18n="hero.role">Desenvolvedor de Software</span>
+                            <br>
+                            <span class="hero__specialty gradient-text" data-i18n="hero.specialty">
+                                Especialista em Geolocalização & Logística
+                            </span>
+                        </h2>
+                        <p class="hero__description" data-i18n="hero.description">
+                            Desenvolvedor Júnior I atuando em empresas de gestão logística e last mile.
+                            Especializado em geolocalização de endereços, scoring, delimitadores geográficos
+                            e otimização de entregas.
+                        </p>
+
+                        <!-- Social Links -->
+                        <div class="social-links" role="list" aria-label="Social media links">
+                            <a href="https://github.com/IgorMariano25" target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="GitHub">
+                                <i class='bx bxl-github' aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/igormarianodev/" target="_blank"
+                                rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                <i class='bx bxl-linkedin' aria-hidden="true"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send/?phone=5521988431009&text&type=phone_number&app_absent=0"
+                                target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                                <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:igor-mariano@outlook.com" target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="Email">
+                                <i class='bx bx-envelope' aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero__cta">
+                            <a href="Currículo_Igor_Mariano.pdf" download class="btn btn--primary"
+                                data-i18n="hero.downloadCV">
+                                <i class='bx bx-download' aria-hidden="true"></i>
+                                Download Currículo
+                            </a>
+                            <a href="#portfolio" class="btn btn--secondary" data-i18n="hero.viewWork">
+                                <i class='bx bx-briefcase' aria-hidden="true"></i>
+                                Ver Projetos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__image">
+                        <img src="./images/setup_4.svg" alt="Software development illustration" loading="eager"
+                            width="500" height="500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section section--alt" id="about">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__image">
+                        <img src="./images/about_me_4.svg" alt="About Igor Mariano" loading="lazy" width="400"
+                            height="400">
+                    </div>
+
+                    <div class="about__text">
+                        <h2 class="section-title">
+                            <span data-i18n="about.title">Sobre</span>
+                            <span class="gradient-text">Mim</span>
+                        </h2>
+                        <h3 class="about__subtitle" data-i18n="about.subtitle">
+                            Desenvolvedor de Software Júnior I
+                        </h3>
+                        <p data-i18n="about.intro">
+                            Estudante de Análise e Desenvolvimento de Sistemas (5º Semestre) no Ibmec,
+                            com foco em desenvolvimento web e soluções de geolocalização para logística.
+                        </p>
+                        <p data-i18n="about.passion">
+                            Apaixonado por tecnologia, busco constantemente aprimorar minhas habilidades
+                            em desenvolvimento front-end e back-end. Nas horas vagas, pratico corrida,
+                            musculação e gosto de ler enquanto programo.
+                        </p>
+
+                        <!-- Stats -->
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text">2+</span>
+                                <span class="stat-label">Anos de Experiência</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text">10+</span>
+                                <span class="stat-label">Projetos Concluídos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text">15+</span>
+                                <span class="stat-label">Tecnologias</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section (NEW) -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="experience.title">
+                    Experiência <span class="gradient-text">Profissional</span>
+                </h2>
+
+                <div class="timeline">
+                    <!-- Envoy Experience -->
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title" data-i18n="experience.envoy.role">
+                                        Desenvolvedor de Software Júnior I
+                                    </h3>
+                                    <p class="timeline-company">
+                                        <i class='bx bx-buildings' aria-hidden="true"></i>
+                                        <span data-i18n="experience.envoy.company">Envoy</span>
+                                    </p>
+                                </div>
+                                <span class="badge badge--success" data-i18n="experience.current">Atual</span>
+                            </div>
+                            <p class="timeline-period" data-i18n="experience.envoy.period">2023 - Presente</p>
+                            <p class="timeline-description" data-i18n="experience.envoy.description">
+                                Atuação em projetos de gestão logística e last mile delivery
+                            </p>
+
+                            <div class="timeline-highlights">
+                                <h4 class="highlights-title">
+                                    <i class='bx bx-map' aria-hidden="true"></i>
+                                    Especialização em Geolocalização
+                                </h4>
+                                <ul class="highlights-list" role="list">
+                                    <li data-i18n="experience.envoy.responsibilities.0">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Correção e validação de geolocalizações de endereços
+                                    </li>
+                                    <li data-i18n="experience.envoy.responsibilities.1">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Desenvolvimento de processos de pontuação (scoring) de endereços
+                                    </li>
+                                    <li data-i18n="experience.envoy.responsibilities.2">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Definição e análise de delimitadores geográficos
+                                    </li>
+                                    <li data-i18n="experience.envoy.responsibilities.3">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Implementação de áreas de entrega, risco e fraude
+                                    </li>
+                                    <li data-i18n="experience.envoy.responsibilities.4">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Trabalho com zip codes e geometrias espaciais (polígonos e círculos)
+                                    </li>
+                                    <li data-i18n="experience.envoy.responsibilities.5">
+                                        <i class='bx bx-check' aria-hidden="true"></i>
+                                        Otimização de rotas de entrega usando algoritmos de geolocalização
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Tech Stack -->
+                            <div class="tech-stack">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Google Maps API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Eu Entrego Experience -->
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title" data-i18n="experience.euEntrego.role">
+                                        Desenvolvedor de Software Júnior I
+                                    </h3>
+                                    <p class="timeline-company">
+                                        <i class='bx bx-package' aria-hidden="true"></i>
+                                        <span data-i18n="experience.euEntrego.company">Eu Entrego</span>
+                                    </p>
+                                </div>
+                                <span class="badge badge--success" data-i18n="experience.current">Atual</span>
+                            </div>
+                            <p class="timeline-period" data-i18n="experience.euEntrego.period">2023 - Presente</p>
+                            <p class="timeline-description" data-i18n="experience.euEntrego.description">
+                                Desenvolvimento de soluções para logística de última milha
+                            </p>
+
+                            <ul class="highlights-list" role="list">
+                                <li data-i18n="experience.euEntrego.responsibilities.0">
+                                    <i class='bx bx-check' aria-hidden="true"></i>
+                                    Integração de APIs de geolocalização
+                                </li>
+                                <li data-i18n="experience.euEntrego.responsibilities.1">
+                                    <i class='bx bx-check' aria-hidden="true"></i>
+                                    Validação e normalização de endereços
+                                </li>
+                                <li data-i18n="experience.euEntrego.responsibilities.2">
+                                    <i class='bx bx-check' aria-hidden="true"></i>
+                                    Desenvolvimento de features para otimização de entregas
+                                </li>
+                            </ul>
+
+                            <!-- Tech Stack -->
+                            <div class="tech-stack">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section section--alt" id="skills">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="skills.title">
+                    Habilidades & <span class="gradient-text">Tecnologias</span>
+                </h2>
+
+                <!-- Geolocation Specialization (Featured) -->
+                <div class="geolocation-highlight">
+                    <h3 class="geolocation-title" data-i18n="skills.geolocation.title">
+                        <i class='bx bx-map-pin' aria-hidden="true"></i>
+                        Especialização em Geolocalização
+                    </h3>
+                    <div class="geolocation-grid">
+                        <div class="geolocation-item">
+                            <i class='bx bx-current-location' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.geocoding">
+                                Geocodificação & Validação de Endereços
+                            </span>
+                        </div>
+                        <div class="geolocation-item">
+                            <i class='bx bx-target-lock' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.scoring">
+                                Scoring & Qualidade de Dados Geográficos
+                            </span>
+                        </div>
+                        <div class="geolocation-item">
+                            <i class='bx bx-shape-polygon' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.boundaries">
+                                Delimitadores Geográficos (Polígonos & Círculos)
+                            </span>
+                        </div>
+                        <div class="geolocation-item">
+                            <i class='bx bx-shield-quarter' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.areas">
+                                Áreas de Entrega, Risco e Fraude
+                            </span>
+                        </div>
+                        <div class="geolocation-item">
+                            <i class='bx bx-envelope' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.zipcodes">
+                                Gestão de Zip Codes & CEPs
+                            </span>
+                        </div>
+                        <div class="geolocation-item">
+                            <i class='bx bx-map-alt' aria-hidden="true"></i>
+                            <span data-i18n="skills.geolocation.items.routing">
+                                Otimização de Rotas de Entrega
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="skills-grid">
+                    <!-- Front-end -->
+                    <div class="skill-category">
+                        <h3 class="category-title" data-i18n="skills.categories.frontend">Front-end</h3>
+                        <div class="skill-items">
+                            <article class="skill-card">
+                                <i class='bx bxl-html5' aria-hidden="true"></i>
+                                <h4>HTML5</h4>
+                                <p data-i18n="skills.html">
+                                    Linguagem de marcação para estruturação de páginas web
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-css3' aria-hidden="true"></i>
+                                <h4>CSS3</h4>
+                                <p data-i18n="skills.css">
+                                    Linguagem de estilo para design e layout responsivo
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-javascript' aria-hidden="true"></i>
+                                <h4>JavaScript</h4>
+                                <p data-i18n="skills.javascript">
+                                    Linguagem de programação para interatividade web
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-typescript' aria-hidden="true"></i>
+                                <h4>TypeScript</h4>
+                                <p data-i18n="skills.typescript">
+                                    JavaScript com tipagem estática para maior segurança
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-angular' aria-hidden="true"></i>
+                                <h4>Angular</h4>
+                                <p data-i18n="skills.angular">
+                                    Framework front-end para aplicações web dinâmicas
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-react' aria-hidden="true"></i>
+                                <h4>React</h4>
+                                <p data-i18n="skills.react">
+                                    Biblioteca JavaScript para interfaces de usuário
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-react' aria-hidden="true"></i>
+                                <h4>React Native</h4>
+                                <p data-i18n="skills.reactNative">
+                                    Framework para desenvolvimento mobile multiplataforma
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-figma' aria-hidden="true"></i>
+                                <h4>Figma</h4>
+                                <p data-i18n="skills.figma">
+                                    Ferramenta colaborativa de design de interfaces
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Back-end -->
+                    <div class="skill-category">
+                        <h3 class="category-title" data-i18n="skills.categories.backend">Back-end</h3>
+                        <div class="skill-items">
+                            <article class="skill-card">
+                                <i class='bx bxl-java' aria-hidden="true"></i>
+                                <h4>Java</h4>
+                                <p data-i18n="skills.java">
+                                    Linguagem de programação robusta e multiplataforma
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-spring-boot' aria-hidden="true"></i>
+                                <h4>Spring Boot</h4>
+                                <p data-i18n="skills.springBoot">
+                                    Framework Java para aplicações escaláveis
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-firebase' aria-hidden="true"></i>
+                                <h4>Firebase</h4>
+                                <p data-i18n="skills.firebase">
+                                    Plataforma Google para desenvolvimento mobile e web
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-category">
+                        <h3 class="category-title" data-i18n="skills.categories.tools">Ferramentas</h3>
+                        <div class="skill-items">
+                            <article class="skill-card">
+                                <i class='bx bxl-git' aria-hidden="true"></i>
+                                <h4>Git</h4>
+                                <p data-i18n="skills.git">
+                                    Sistema de controle de versão distribuído
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-github' aria-hidden="true"></i>
+                                <h4>GitHub</h4>
+                                <p data-i18n="skills.github">
+                                    Plataforma de hospedagem e colaboração de código
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-gitlab' aria-hidden="true"></i>
+                                <h4>GitLab</h4>
+                                <p data-i18n="skills.gitlab">
+                                    Plataforma DevOps com CI/CD integrado
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M2 3.5C1.8 3.5 1.6 3.6 1.5 3.7C1.4 3.9 1.3 4.1 1.4 4.3L4.6 20.3C4.7 20.7 5 21 5.4 21H18.6C18.9 21 19.1 20.8 19.2 20.5L22.6 4.3C22.7 4.1 22.6 3.9 22.5 3.7C22.4 3.6 22.2 3.5 22 3.5H2ZM14.5 14.5H9.5L8.5 9.5H15.5L14.5 14.5Z"
+                                        fill="var(--color-brand-500)" />
+                                </svg>
+                                <h4>Bitbucket</h4>
+                                <p data-i18n="skills.bitbucket">
+                                    Plataforma de repositórios Git com integração Jira
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <i class='bx bxl-slack' aria-hidden="true"></i>
+                                <h4>Slack</h4>
+                                <p data-i18n="skills.slack">
+                                    Plataforma de comunicação e colaboração em equipe
+                                </p>
+                            </article>
+
+                            <article class="skill-card">
+                                <svg width="48" height="48" viewBox="0 0 64 64" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M57.705 33.717l1.575 20.1L31.4 58.82 29 38.72l3.983-.556c.648.278 1.112.37 1.853.556 1.204.278 2.594.648 4.63-.463.463-.278 1.482-1.112 1.853-1.667zm-43.073 23.9c-.463-.74-1.297-1.575-2.594-2.594-1.853-1.482-1.204-4.076-.093-5.65 1.4-2.686 8.707-6.206 8.337-10.56-.185-1.575-.37-3.613-1.853-5.095-.093.556 0 1.112 0 1.112s-.648-.74-.926-1.853c-.278-.37-.556-.556-.834-1.112-.185.648-.185 1.297-.185 1.297s-.463-1.204-.556-2.13c-.278.463-.37 1.297-.37 1.297s-.648-1.853-.463-2.87c-.278-.834-1.204-2.594-.926-6.484 1.575 1.112 5.095.834 6.484-1.204.463-.648.74-2.5-.185-6.114-.648-2.316-2.223-5.743-2.87-7.04l-.093.093c.37 1.02 1.02 3.242 1.297 4.354.74 3.242 1.02 4.354.648 5.836-.278 1.297-1.02 2.13-2.964 3.057-1.853.926-4.446-1.4-4.54-1.482-1.853-1.482-3.242-3.9-3.427-5.002-.185-1.297.74-2.038 1.204-3.057-.648.185-1.4.556-1.4.556s.834-.926 1.945-1.667a9.43 9.43 0 0 0 1.204-.834H10.28s1.112-.648 2.316-1.02H10.93l4.446-1.945c1.4-.556 2.686-.37 3.427.648 1.02 1.4 2.038 2.13 4.168 2.686 1.297-.556 1.76-.926 3.427-1.4 1.482-1.667 2.686-1.853 2.686-1.853s-.834.74-.926 1.575c.834-.648 1.76-1.204 1.76-1.204s-.37.463-.648 1.112l.093.093c1.02-.556 2.13-1.02 2.13-1.02s-.37.37-.74.926c.74 0 2.223 0 2.78.093 3.427.093 4.168-3.613 5.465-4.168 1.667-.556 2.408-.926 5.187 1.853 2.408 2.408 4.26 6.577 3.335 7.503-.74.74-2.316-.278-4.076-2.408-.926-1.112-1.575-2.5-1.945-4.168-.185-1.4-1.204-2.223-1.204-2.223s.648 1.4.648 2.594c0 .648.093 3.057 1.112 4.446-.093.185-.185 1.02-.278 1.112-1.204-1.482-3.9-2.5-4.26-2.87 1.482 1.204 4.817 3.9 6.114 6.484 1.204 2.5.463 4.724 1.112 5.28.185.185 2.594 3.15 3.057 4.724.834 2.686.093 5.465-1.02 7.132l-2.964.463a3.92 3.92 0 0 1-1.112-.371c.185-.37.648-1.297.648-1.482l-.185-.278c-.926 1.297-2.5 2.594-3.798 3.335-1.667.926-3.613.834-4.9.37-3.613-1.112-7.04-3.52-7.78-4.168 0 0 0 .463.093.648a28.07 28.07 0 0 0 5.002 4.168l-4.26.463 2.038 15.747c-.926.093-1.02.185-2.038.37-.834-3.057-2.5-5.002-4.354-6.206-1.575-1.02-3.798-1.297-5.928-.834l-.093.185c1.482-.185 3.242.093 5.002 1.204s3.15 3.983 3.705 5.65c.648 2.223 1.112 4.54-.648 7.04-1.297 1.76-5.002 2.78-7.966.648.834 1.297 1.853 2.316 3.335 2.5 2.13.278 4.168-.093 5.65-1.482 1.204-1.204 1.853-3.798 1.667-6.577l1.945-.278.648 4.9L62.06 56.7l-2.78-25.195-1.575.278L54.556 0 1.942 6.114l6.484 52.428z"
+                                        fill="var(--color-brand-500)" />
+                                    <path
+                                        d="M39.665 30.06c1.4 1.02 2.594 1.667 3.798 1.575.74-.093 1.482-1.297 1.945-2.408.37-.74.37-1.575-.185-1.853-.278-.093-1.4-.093-2.223 0-1.575.185-3.15.74-3.52 1.02-.556.37-.278 1.297.185 1.667m.37-10.84v.093l.093.185c.37.74.74 1.482 1.482 1.853.185 0 .37-.093.556-.093.648 0 1.02.093 1.297.185v-.556c-.093-.926.185-2.594-1.667-3.52-.74-.37-1.667-.185-2.038.185h.185c.463.185.185.37.093.556-.093.37-.185.463 0 1.112"
+                                        fill="var(--color-brand-500)" />
+                                    <path
+                                        d="M31.698 19.407c.463-.37-2.13-.926-4.168.37-1.482 1.02-1.482 3.15-.093 4.354a1.27 1.27 0 0 1 .37.278c.37-.185.926-.37 1.4-.556.926-.278 1.667-.463 2.316-.556.278-.37.648-.926.556-1.945-.093-1.4-1.204-1.112-.37-1.945m15.098 22.5l-4.446 7.4-5.187-1.575-4.54 6.947.185 2.223 24.825-4.54-1.482-15.47-4.076 8.522z"
+                                        fill="var(--color-brand-500)" />
+                                </svg>
+                                <h4>Datadog</h4>
+                                <p data-i18n="skills.datadog">
+                                    Plataforma de monitoramento e observabilidade
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="portfolio.title">
+                    Projetos em <span class="gradient-text">Destaque</span>
+                </h2>
+
+                <div class="portfolio-grid">
+                    <!-- Project 1 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/greey-wheight.jpg" alt="FitnessApp Project" loading="lazy" width="600"
+                                height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.fitnessApp.title">
+                                    FitnessApp
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.fitnessApp.description">
+                                    Aplicativo mobile de fitness e treinos
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-android' aria-hidden="true"></i>
+                                    <i class='bx bxl-react' aria-hidden="true"></i>
+                                </div>
+                                <a href="./projetos/Cartão de Crédito/cartao-credito.html" target="_blank"
+                                    rel="noopener noreferrer" class="portfolio-link"
+                                    data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/Mario-Bros-2.jpg" alt="Mario Bros Movie Website" loading="lazy"
+                                width="600" height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.marioBros.title">
+                                    Website Filme Mario Bros
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.marioBros.description">
+                                    Landing page promocional com design moderno
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-html5' aria-hidden="true"></i>
+                                    <i class='bx bxl-css3' aria-hidden="true"></i>
+                                    <i class='bx bxl-typescript' aria-hidden="true"></i>
+                                    <i class='bx bxl-angular' aria-hidden="true"></i>
+                                </div>
+                                <a href="https://filmemario.com/" target="_blank" rel="noopener noreferrer"
+                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/Harvey-Specter.jpg" alt="Projeto Themis" loading="lazy" width="600"
+                                height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.themis.title">
+                                    Projeto Themis
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.themis.description">
+                                    Sistema de gestão jurídica
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-html5' aria-hidden="true"></i>
+                                    <i class='bx bxl-css3' aria-hidden="true"></i>
+                                    <i class='bx bxl-javascript' aria-hidden="true"></i>
+                                </div>
+                                <a href="./projetos/Jogo da Velha/index.html" target="_blank" rel="noopener noreferrer"
+                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/purple-computer.jpg" alt="Login Page" loading="lazy" width="600"
+                                height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.loginPage.title">
+                                    Login Page
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.loginPage.description">
+                                    Interface de autenticação moderna
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-html5' aria-hidden="true"></i>
+                                    <i class='bx bxl-css3' aria-hidden="true"></i>
+                                </div>
+                                <a href="./projetos/Login-Page/login-page.html" target="_blank"
+                                    rel="noopener noreferrer" class="portfolio-link"
+                                    data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/blue-computer.jpg" alt="Ibtech Project" loading="lazy" width="600"
+                                height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.ibtech.title">
+                                    Ibtech
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.ibtech.description">
+                                    Plataforma educacional
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-html5' aria-hidden="true"></i>
+                                    <i class='bx bxl-css3' aria-hidden="true"></i>
+                                    <i class='bx bxl-javascript' aria-hidden="true"></i>
+                                    <i class='bx bxl-react' aria-hidden="true"></i>
+                                </div>
+                                <a href="https://ibtech.sendodigital.com/" target="_blank" rel="noopener noreferrer"
+                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="./images/Luxury-Cars-Garage.jpg" alt="Colecionador de Carros" loading="lazy"
+                                width="600" height="400">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title" data-i18n="portfolio.projects.cars.title">
+                                    Colecionador de Carros
+                                </h3>
+                                <p class="portfolio-description" data-i18n="portfolio.projects.cars.description">
+                                    Sistema full-stack para gestão de coleções
+                                </p>
+                                <div class="portfolio-tech">
+                                    <i class='bx bxl-angular' aria-hidden="true"></i>
+                                    <i class='bx bxl-java' aria-hidden="true"></i>
+                                    <i class='bx bxl-spring-boot' aria-hidden="true"></i>
+                                </div>
+                                <a href="https://storageapicarros.z13.web.core.windows.net/" target="_blank"
+                                    rel="noopener noreferrer" class="portfolio-link"
+                                    data-i18n-aria="portfolio.viewProject">
+                                    <i class='bx bx-link-external' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <p class="footer__text">
+                    <span data-i18n="footer.copyright">Desenvolvido por</span>
+                    <span class="gradient-text">Igor Mariano</span> &copy; 2026
+                </p>
+
+                <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+                    <i class='bx bx-up-arrow-alt' aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- Application Scripts (Modules) -->
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>

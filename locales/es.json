@@ -1,0 +1,140 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "experience": "Experiencia",
+        "skills": "Habilidades",
+        "portfolio": "Portafolio"
+    },
+    "hero": {
+        "greeting": "Hola, soy",
+        "name": "Igor Mariano",
+        "role": "Desarrollador de Software",
+        "specialty": "Especialista en Geolocalización y Logística",
+        "description": "Desarrollador de Software Júnior I trabajando en empresas de gestión logística y última milla. Especializado en geolocalización de direcciones, scoring, delimitadores geográficos y optimización de entregas.",
+        "downloadCV": "Descargar CV",
+        "viewWork": "Ver Proyectos"
+    },
+    "about": {
+        "title": "Sobre mí",
+        "subtitle": "Desarrollador de Software Junior I",
+        "intro": "Soy estudiante de Ingeniería de Software (7.º semestre) en Ibmec y graduado en Análisis y Desarrollo de Sistemas, también por Ibmec. Fui reconocido como estudiante Ibmec Star (promedio académico ≥ 9.0) en ambos programas. Actualmente, mi enfoque profesional está en el desarrollo web y en la creación de plataformas SaaS.",
+        "passion": "Apasionado por la tecnología, busco mejorar constantemente mis habilidades en desarrollo front-end y back-end. En mi tiempo libre practico running, Muay Thai y entrenamiento de fuerza. También disfruto leer y escuchar música mientras programo.",
+        "education": "Finalización prevista de Ingeniería de Software: 2026.2\nGraduado en Análisis y Desarrollo de Sistemas: 2024.2"
+    },
+    "experience": {
+        "title": "Experiencia Profesional",
+        "current": "Actual",
+        "envoy": {
+            "company": "Envoy",
+            "role": "Desarrollador de Software Júnior I",
+            "period": "2023 - Presente",
+            "description": "Actuación en proyectos de gestión logística y última milla",
+            "responsibilities": [
+                "Corrección y validación de geolocalizaciones de direcciones",
+                "Desarrollo de procesos de puntuación (scoring) de direcciones",
+                "Definición y análisis de delimitadores geográficos",
+                "Implementación de áreas de entrega, riesgo y fraude",
+                "Trabajo con códigos postales y geometrías espaciales (polígonos y círculos)",
+                "Optimización de rutas de entrega usando algoritmos de geolocalización"
+            ]
+        },
+        "euEntrego": {
+            "company": "Eu Entrego",
+            "role": "Desarrollador de Software Júnior I",
+            "period": "2023 - Presente",
+            "description": "Desarrollo de soluciones para logística de última milla",
+            "responsibilities": [
+                "Integración de APIs de geolocalización",
+                "Validación y normalización de direcciones",
+                "Desarrollo de funcionalidades para optimización de entregas"
+            ]
+        }
+    },
+    "skills": {
+        "title": "Habilidades y Tecnologías",
+        "categories": {
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "tools": "Herramientas",
+            "geolocation": "Geolocalización"
+        },
+        "geolocation": {
+            "title": "Especialización en Geolocalización",
+            "items": {
+                "geocoding": "Geocodificación y Validación de Direcciones",
+                "scoring": "Scoring y Calidad de Datos Geográficos",
+                "boundaries": "Delimitadores Geográficos (Polígonos y Círculos)",
+                "areas": "Áreas de Entrega, Riesgo y Fraude",
+                "zipcodes": "Gestión de Códigos Postales",
+                "routing": "Optimización de Rutas de Entrega"
+            }
+        },
+        "html": "Lenguaje de marcado para estructuración de páginas web",
+        "css": "Lenguaje de estilo para diseño y layout responsivo",
+        "javascript": "Lenguaje de programación para interactividad web",
+        "typescript": "JavaScript con tipado estático para mayor seguridad",
+        "angular": "Framework front-end para aplicaciones web dinámicas",
+        "react": "Biblioteca JavaScript para interfaces de usuario",
+        "reactNative": "Framework para desarrollo móvil multiplataforma",
+        "java": "Lenguaje de programación robusto y multiplataforma",
+        "springBoot": "Framework Java para aplicaciones escalables",
+        "firebase": "Plataforma Google para desarrollo móvil y web",
+        "git": "Sistema de control de versiones distribuido",
+        "github": "Plataforma de alojamiento y colaboración de código",
+        "gitlab": "Plataforma DevOps con CI/CD integrado",
+        "bitbucket": "Plataforma de repositorios Git con integración Jira",
+        "slack": "Plataforma de comunicación y colaboración en equipo",
+        "datadog": "Plataforma de monitoreo y observabilidad""figma": "Herramienta colaborativa de diseño de interfaces"
+    },
+    "portfolio": {
+        "title": "Proyectos Destacados",
+        "viewProject": "Ver Proyecto",
+        "projects": {
+            "fitnessApp": {
+                "title": "FitnessApp",
+                "description": "Aplicación móvil de fitness y entrenamientos"
+            },
+            "marioBros": {
+                "title": "Sitio Web Película Mario Bros",
+                "description": "Página de aterrizaje promocional con diseño moderno"
+            },
+            "themis": {
+                "title": "Proyecto Themis",
+                "description": "Sistema de gestión jurídica"
+            },
+            "loginPage": {
+                "title": "Página de Login",
+                "description": "Interfaz de autenticación moderna"
+            },
+            "form": {
+                "title": "Formulario Interactivo",
+                "description": "Formulario con validación en tiempo real"
+            },
+            "ibtech": {
+                "title": "Ibtech",
+                "description": "Plataforma educativa"
+            },
+            "cars": {
+                "title": "Coleccionista de Coches",
+                "description": "Sistema full-stack para gestión de colecciones"
+            },
+            "ikaros": {
+                "title": "Proyecto Ikaros",
+                "description": "Aplicación empresarial compleja"
+            }
+        }
+    },
+    "footer": {
+        "copyright": "Desarrollado por",
+        "rights": "Todos los derechos reservados"
+    },
+    "aria": {
+        "menu": "Menú de navegación",
+        "toggleMenu": "Alternar menú",
+        "social": "Redes sociales",
+        "backToTop": "Volver arriba",
+        "languageSelector": "Selector de idioma",
+        "themeToggle": "Alternar tema"
+    }
+}

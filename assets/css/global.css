@@ -1,0 +1,463 @@
+/**
+ * Global Styles & Base Reset
+ * Modern CSS Reset + Base Styles
+ * 
+ * @author Igor Mariano
+ */
+
+/* ===================================
+   Modern CSS Reset
+   Based on Andy Bell's Modern CSS Reset
+   =================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html {
+    font-size: 100%;
+    /* 16px base */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: var(--line-height-normal);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+    transition: background-color var(--transition-base),
+        color var(--transition-base);
+}
+
+/* Remove list styles on ul, ol with a class attribute */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: var(--text-link);
+}
+
+a:not([class]):hover {
+    color: var(--text-link-hover);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+    font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+}
+
+h4 {
+    font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-2xl));
+}
+
+h5 {
+    font-size: clamp(var(--font-size-md), 2vw, var(--font-size-xl));
+}
+
+h6 {
+    font-size: clamp(var(--font-size-base), 1.5vw, var(--font-size-lg));
+}
+
+p {
+    margin-bottom: var(--space-4);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+}
+
+strong,
+b {
+    font-weight: var(--font-weight-semibold);
+}
+
+small {
+    font-size: var(--font-size-sm);
+}
+
+code {
+    font-family: var(--font-family-mono);
+    font-size: 0.9em;
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+/* ===================================
+   Layout Utilities
+   =================================== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+}
+
+.section {
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
+}
+
+.section--alt {
+    background-color: var(--bg-secondary);
+}
+
+/* ===================================
+   Scrollbar Styling
+   =================================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-hover);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--bg-secondary);
+}
+
+/* ===================================
+   Selection
+   =================================== */
+
+::selection {
+    background-color: var(--color-accent);
+    color: var(--text-inverse);
+}
+
+::-moz-selection {
+    background-color: var(--color-accent);
+    color: var(--text-inverse);
+}
+
+/* ===================================
+   Focus Styles (Accessibility)
+   =================================== */
+
+:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ===================================
+   Loading State
+   =================================== */
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--bg-tertiary) 0%,
+            var(--bg-secondary) 50%,
+            var(--bg-tertiary) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+/* Text Alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-tertiary {
+    color: var(--text-tertiary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* Font Weights */
+.font-light {
+    font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+    font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Display */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Flex Utilities */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* Gap */
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-6 {
+    gap: var(--space-6);
+}
+
+.gap-8 {
+    gap: var(--space-8);
+}
+
+/* Margins */
+.m-0 {
+    margin: var(--space-0);
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mt-8 {
+    margin-top: var(--space-8);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+.mb-8 {
+    margin-bottom: var(--space-8);
+}
+
+/* Paddings */
+.p-4 {
+    padding: var(--space-4);
+}
+
+.p-6 {
+    padding: var(--space-6);
+}
+
+.p-8 {
+    padding: var(--space-8);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }
+
+    .md\:flex {
+        display: flex;
+    }
+}
+
+@media (max-width: 640px) {
+    .sm\:hidden {
+        display: none;
+    }
+
+    .sm\:flex {
+        display: flex;
+    }
+}
