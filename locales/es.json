@@ -85,7 +85,14 @@
         "gitlab": "Plataforma DevOps con CI/CD integrado",
         "bitbucket": "Plataforma de repositorios Git con integración Jira",
         "slack": "Plataforma de comunicación y colaboración en equipo",
-        "datadog": "Plataforma de monitoreo y observabilidad""figma": "Herramienta colaborativa de diseño de interfaces"
+        "datadog": "Plataforma de monitoreo y observabilidad",
+        "geojson": "Formato para codificar estructuras de datos geográficos",
+        "openstreetmap": "API de mapas y datos geográficos colaborativos",
+        "googlemaps": "Plataforma de mapas y servicios de geolocalización",
+        "jira": "Herramienta de gestión de proyectos ágil",
+        "vscode": "Editor de código ligero y extensible",
+        "intellij": "IDE potente para desarrollo Java",
+        "figma": "Herramienta colaborativa de diseño de interfaces"
     },
     "portfolio": {
         "title": "Proyectos Destacados",
