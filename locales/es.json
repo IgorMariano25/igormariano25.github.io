@@ -16,7 +16,7 @@
         "viewWork": "Ver Proyectos"
     },
     "about": {
-        "title": "Sobre mí",
+        "title": "Sobre",
         "subtitle": "Desarrollador de Software Junior I",
         "intro": "Soy estudiante de Ingeniería de Software (7.º semestre) en Ibmec y graduado en Análisis y Desarrollo de Sistemas, también por Ibmec. Fui reconocido como estudiante Ibmec Star (promedio académico ≥ 9.0) en ambos programas. Actualmente, mi enfoque profesional está en el desarrollo web y en la creación de plataformas SaaS.",
         "passion": "Apasionado por la tecnología, busco mejorar constantemente mis habilidades en desarrollo front-end y back-end. En mi tiempo libre practico running, Muay Thai y entrenamiento de fuerza. También disfruto leer y escuchar música mientras programo.",
@@ -29,7 +29,7 @@
             "company": "Envoy",
             "role": "Desarrollador de Software Júnior I",
             "period": "2023 - Presente",
-            "description": "Actuación en proyectos de gestión logística y última milla",
+            "description": "Plataforma SaaS de gestión de entregas con enrutamiento inteligente, seguimiento en tiempo real y torre de control. Tecnología que integra todo el recorrido logístico con algoritmos avanzados de geolocalización, reduciendo costos hasta un 20% y ahorrando 6h de trabajo diario.",
             "responsibilities": [
                 "Corrección y validación de geolocalizaciones de direcciones",
                 "Desarrollo de procesos de puntuación (scoring) de direcciones",
@@ -43,7 +43,7 @@
             "company": "Eu Entrego",
             "role": "Desarrollador de Software Júnior I",
             "period": "2023 - Presente",
-            "description": "Desarrollo de soluciones para logística de última milla",
+            "description": "Líder nacional en entregas rápidas con una red de +250 mil repartidores autónomos. Ofrece Ship From Store, entregas Same Day, seguimiento en tiempo real y enrutamiento exclusivo con algoritmo propietario para máxima optimización logística.",
             "responsibilities": [
                 "Integración de APIs de geolocalización",
                 "Validación y normalización de direcciones",

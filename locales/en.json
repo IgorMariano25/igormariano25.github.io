@@ -15,24 +15,21 @@
         "downloadCV": "Download Resume",
         "viewWork": "View Projects"
     },
-    {
-        "about": {
-            "title": "About Me",
-            "subtitle": "Junior Software Developer I",
-            "intro": "I am a Software Engineering student (7th semester) at Ibmec and hold a degree in Systems Analysis and Development, also from Ibmec. I was recognized as an Ibmec Star student (GPA ≥ A+) in both programs. Currently, my career focus is on web development and building SaaS platforms.",
-            "passion": "Passionate about technology, I am constantly improving my front-end and back-end development skills. In my free time, I practice running, Muay Thai, and strength training. I also enjoy reading and listening to music while coding.",
-            "education": "Expected graduation in Software Engineering: 2026.2\nBachelor's degree in Systems Analysis and Development: 2024.2"
-        }
-    }
-
-  "experience": {
+    "about": {
+        "title": "About",
+        "subtitle": "Junior Software Developer I",
+        "intro": "I am a Software Engineering student (7th semester) at Ibmec and hold a degree in Systems Analysis and Development, also from Ibmec. I was recognized as an Ibmec Star student (GPA ≥ A+) in both programs. Currently, my career focus is on web development and building SaaS platforms.",
+        "passion": "Passionate about technology, I am constantly improving my front-end and back-end development skills. In my free time, I practice running, Muay Thai, and strength training. I also enjoy reading and listening to music while coding.",
+        "education": "Expected graduation in Software Engineering: 2026.2\nBachelor's degree in Systems Analysis and Development: 2024.2"
+    },
+    "experience": {
         "title": "Professional Experience",
         "current": "Current",
         "envoy": {
             "company": "Envoy",
             "role": "Junior Software Developer I",
             "period": "2023 - Present",
-            "description": "Working on logistics management and last mile delivery projects",
+            "description": "SaaS platform for delivery management with intelligent routing, real-time tracking, and control tower. Technology that integrates the entire logistics journey with advanced geolocation algorithms, reducing costs by up to 20% and saving 6h of daily work.",
             "responsibilities": [
                 "Address geolocation correction and validation",
                 "Development of address scoring processes",
@@ -46,7 +43,7 @@
             "company": "Eu Entrego",
             "role": "Junior Software Developer I",
             "period": "2023 - Present",
-            "description": "Development of last mile logistics solutions",
+            "description": "National leader in fast deliveries with a network of +250k autonomous couriers. Offers Ship From Store, Same Day delivery, real-time tracking, and exclusive routing with proprietary algorithm for maximum logistics optimization.",
             "responsibilities": [
                 "Geolocation API integration",
                 "Address validation and normalization",

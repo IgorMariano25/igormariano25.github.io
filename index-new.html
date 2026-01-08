@@ -271,14 +271,16 @@
                                     </h3>
                                     <p class="timeline-company">
                                         <i class='bx bx-buildings' aria-hidden="true"></i>
-                                        <span data-i18n="experience.envoy.company">Envoy</span>
+                                        <a href="https://www.envoylog.com.br/" target="_blank" rel="noopener noreferrer" class="company-link">
+                                            <span data-i18n="experience.envoy.company">Envoy</span>
+                                        </a>
                                     </p>
                                 </div>
                                 <span class="badge badge--success" data-i18n="experience.current">Atual</span>
                             </div>
                             <p class="timeline-period" data-i18n="experience.envoy.period">2023 - Presente</p>
                             <p class="timeline-description" data-i18n="experience.envoy.description">
-                                Atuação em projetos de gestão logística e last mile delivery
+                                Plataforma SaaS de gestão de entregas com roteirização inteligente, rastreamento em tempo real e torre de controle. Tecnologia que integra toda a jornada logística com algoritmos avançados de geolocalização, reduzindo custos em até 20% e economizando 6h no trabalho diário.
                             </p>
 
                             <div class="timeline-highlights">
@@ -339,14 +341,16 @@
                                     </h3>
                                     <p class="timeline-company">
                                         <i class='bx bx-package' aria-hidden="true"></i>
-                                        <span data-i18n="experience.euEntrego.company">Eu Entrego</span>
+                                        <a href="https://euentrego.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+                                            <span data-i18n="experience.euEntrego.company">Eu Entrego</span>
+                                        </a>
                                     </p>
                                 </div>
                                 <span class="badge badge--success" data-i18n="experience.current">Atual</span>
                             </div>
                             <p class="timeline-period" data-i18n="experience.euEntrego.period">2023 - Presente</p>
                             <p class="timeline-description" data-i18n="experience.euEntrego.description">
-                                Desenvolvimento de soluções para logística de última milha
+                                Referência nacional em entregas rápidas com rede de +250 mil entregadores autônomos. Oferece Ship From Store, entregas Same Day, rastreamento em tempo real e roteirização exclusiva com algoritmo proprietário para máxima otimização logística.
                             </p>
 
                             <ul class="highlights-list" role="list">
@@ -904,8 +908,11 @@
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
-    <!-- Application Scripts (Modules) -->
-    <script type="module" src="./assets/js/main.js"></script>
+    <!-- Application Scripts (Standalone - Works without HTTP Server) -->
+    <script src="./assets/js/main-standalone.js"></script>
+    
+    <!-- ALTERNATIVE: Use this line if you are running with HTTP server -->
+    <!-- <script type="module" src="./assets/js/main.js"></script> -->
 </body>
 
 </html>

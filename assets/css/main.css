@@ -436,6 +436,54 @@
     font-weight: var(--font-weight-medium);
 }
 
+.company-link {
+    color: var(--color-brand-500);
+    text-decoration: none;
+    position: relative;
+    transition: all var(--transition-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.company-link::before {
+    content: '🔗';
+    font-size: 0.85em;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-base);
+}
+
+.company-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.company-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.company-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-brand-500), var(--color-accent));
+    transition: width var(--transition-base);
+}
+
+.company-link:hover::after {
+    width: 100%;
+}
+
 .timeline-period {
     font-size: var(--font-size-sm);
     color: var(--text-tertiary);
