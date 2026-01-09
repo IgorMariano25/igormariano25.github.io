@@ -20,19 +20,121 @@ class I18nManager {
     this.fallbackLocale = options.fallbackLocale || "en";
     this.supportedLocales = options.supportedLocales || ["pt", "en", "es"];
     this.localesPath = options.localesPath || "./locales";
-    this.currentLocale = this.detectLocale();
+    this.currentLocale = this.fallbackLocale; // Será atualizado após detecção
+
+    // Mapeamento de países para idiomas
+    this.countryToLocale = {
+      // Português
+      BR: "pt", // Brasil
+      PT: "pt", // Portugal
+      AO: "pt", // Angola
+      MZ: "pt", // Moçambique
+
+      // Espanhol (LATAM e Espanha)
+      AR: "es", // Argentina
+      BO: "es", // Bolívia
+      CL: "es", // Chile
+      CO: "es", // Colômbia
+      CR: "es", // Costa Rica
+      CU: "es", // Cuba
+      DO: "es", // República Dominicana
+      EC: "es", // Equador
+      SV: "es", // El Salvador
+      GT: "es", // Guatemala
+      HN: "es", // Honduras
+      MX: "es", // México
+      NI: "es", // Nicarágua
+      PA: "es", // Panamá
+      PY: "es", // Paraguai
+      PE: "es", // Peru
+      PR: "es", // Porto Rico
+      ES: "es", // Espanha
+      UY: "es", // Uruguai
+      VE: "es", // Venezuela
+    };
   }
 
+  /**
+   * Detecta o idioma baseado na localização geográfica do usuário
+   * Prioridade: localStorage > Geolocalização por IP > Idioma do navegador > Fallback
+   */
   detectLocale() {
+    // 1. Primeiro verifica se o usuário já escolheu um idioma
     const savedLocale = localStorage.getItem("preferredLocale");
     if (savedLocale && this.supportedLocales.includes(savedLocale)) {
       return savedLocale;
     }
 
-    const browserLang = navigator.language || navigator.userLanguage;
-    const lang = browserLang ? browserLang.split("-")[0] : this.fallbackLocale;
+    // 2. Fallback direto para inglês (idioma padrão)
+    return this.fallbackLocale; // "en"
+  }
 
-    return this.supportedLocales.includes(lang) ? lang : this.fallbackLocale;
+  /**
+   * Tenta obter geolocalização usando múltiplas APIs de fallback
+   */
+  async fetchGeolocation() {
+    // Lista de APIs de geolocalização (em ordem de preferência)
+    const geoApis = [
+      {
+        url: "https://ipwho.is/",
+        getCountry: (data) => data.country_code,
+      },
+      {
+        url: "https://ipapi.co/json/",
+        getCountry: (data) => data.country_code,
+      },
+      {
+        url: "https://api.country.is/",
+        getCountry: (data) => data.country,
+      },
+    ];
+
+    for (const api of geoApis) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+        const response = await fetch(api.url, {
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) continue;
+
+        const data = await response.json();
+        const countryCode = api.getCountry(data);
+
+        if (countryCode) {
+          return countryCode;
+        }
+      } catch (error) {
+        // Tentar próxima API
+        continue;
+      }
+    }
+
+    return null;
+  }
+
+  async detectLocaleByGeolocation() {
+    // Se o usuário já escolheu um idioma, respeitar a escolha
+    const savedLocale = localStorage.getItem("preferredLocale");
+    if (savedLocale && this.supportedLocales.includes(savedLocale)) {
+      return savedLocale;
+    }
+
+    try {
+      const countryCode = await this.fetchGeolocation();
+
+      if (countryCode && this.countryToLocale[countryCode]) {
+        return this.countryToLocale[countryCode];
+      }
+
+      return this.detectLocale();
+    } catch (error) {
+      return this.detectLocale();
+    }
   }
 
   async loadLocale(locale) {
@@ -759,28 +861,31 @@ class PortfolioApp {
 
   async init() {
     try {
-      // 1. Load translations first
-      await this.i18n.loadLocale(this.i18n.getCurrentLocale());
+      // 1. Detectar idioma por geolocalização (ou usar preferência salva)
+      const detectedLocale = await this.i18n.detectLocaleByGeolocation();
+
+      // 2. Carregar traduções
+      await this.i18n.loadLocale(detectedLocale);
       this.i18n.translatePage();
 
-      // 2. Initialize language selector
+      // 3. Initialize language selector
       this.languageSelector = new LanguageSelectorManager(this.i18n);
       this.languageSelector.init();
 
-      // 3. Initialize other modules
+      // 4. Initialize other modules
       this.theme.init();
       this.navigation.init();
       this.scrollEffects.init();
       this.animations.init();
 
-      // 4. Close mobile menu on scroll
+      // 5. Close mobile menu on scroll
       this.scrollEffects.onScroll(() => {
         if (this.navigation.isMenuOpen()) {
           this.navigation.closeMobileMenu();
         }
       });
 
-      // 5. Setup event listeners
+      // 6. Setup event listeners
       this.setupEventListeners();
     } catch (error) {
       console.error("Error initializing application:", error);

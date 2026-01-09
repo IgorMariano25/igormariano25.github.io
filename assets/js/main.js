@@ -86,28 +86,25 @@ class PortfolioApp {
    */
   async init() {
     try {
-      // 1. Load translations first
-      await this.i18n.loadLocale(this.i18n.getCurrentLocale());
+      const detectedLocale = await this.i18n.detectLocaleByGeolocation();
+
+      await this.i18n.loadLocale(detectedLocale);
       this.i18n.translatePage();
 
-      // 2. Initialize language selector (depends on i18n)
       this.languageSelector = new LanguageSelectorManager(this.i18n);
       this.languageSelector.init();
 
-      // 3. Initialize other modules
       this.theme.init();
       this.navigation.init();
       this.scrollEffects.init();
       this.animations.init();
 
-      // 4. Setup scroll callback to close mobile menu on scroll
       this.scrollEffects.onScroll(() => {
         if (this.navigation.isMenuOpen()) {
           this.navigation.closeMobileMenu();
         }
       });
 
-      // 5. Setup event listeners
       this.setupEventListeners();
     } catch (error) {
       console.error("Error initializing application:", error);
