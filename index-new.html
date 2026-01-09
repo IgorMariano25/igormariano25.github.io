@@ -11,7 +11,6 @@
     <meta name="author" content="Igor Mariano">
     <meta name="theme-color" content="#22C55E">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://igormariano25.github.io/">
     <meta property="og:title" content="Igor Mariano - Software Developer | Geolocation Specialist">
@@ -19,7 +18,6 @@
         content="Junior Software Developer specialized in geolocation, logistics, and last mile delivery solutions.">
     <meta property="og:image" content="https://igormariano25.github.io/images/og-image.jpg">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://igormariano25.github.io/">
     <meta property="twitter:title" content="Igor Mariano - Software Developer | Geolocation Specialist">
@@ -49,6 +47,249 @@
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/components.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+
+    <style>
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-overlay);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-index-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-v2 {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-xl);
+            max-width: 950px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            transform: scale(0.9) translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-xl);
+            border: 0;
+        }
+
+        .modal-overlay.active .modal-v2 {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-v2 .modal-grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            min-height: 500px;
+        }
+
+        .modal-v2 .modal-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-v2 .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-v2 .modal-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(to left, var(--bg-elevated), transparent);
+        }
+
+        .modal-v2 .modal-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .modal-v2 .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-v2 .modal-close:hover {
+            background: var(--color-accent);
+            color: var(--text-inverse);
+            border-color: var(--color-accent);
+            transform: rotate(90deg);
+        }
+
+        .modal-v2 .modal-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .modal-v2 .modal-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .modal-v2 .modal-section {
+            margin-bottom: 24px;
+        }
+
+        .modal-v2 .modal-section h4 {
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .modal-v2 .modal-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .modal-v2 .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .modal-v2 .tech-pill {
+            background: var(--color-brand-50);
+            color: var(--color-brand-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--color-brand-200);
+            transition: all 0.3s ease;
+        }
+
+        .modal-v2 .tech-pill:hover {
+            background: var(--color-brand-100);
+            transform: translateY(-2px);
+        }
+
+        [data-theme="dark"] .modal-v2 .tech-pill {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--color-brand-400);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        [data-theme="dark"] .modal-v2 .tech-pill:hover {
+            background: rgba(34, 197, 94, 0.25);
+        }
+
+        .modal-v2 .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 24px;
+        }
+
+        .modal-v2 .modal-btn {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .modal-v2 .modal-btn.primary {
+            background: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-600));
+            color: white;
+            border: none;
+        }
+
+        .modal-v2 .modal-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .modal-v2 .modal-btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-secondary);
+        }
+
+        .modal-v2 .modal-btn.secondary:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .modal-v2 .modal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-v2 .modal-image {
+                height: 200px;
+            }
+
+            .modal-v2 .modal-image::after {
+                display: none;
+            }
+
+            .modal-v2 .modal-content {
+                padding: 24px;
+            }
+
+            .modal-v2 .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-v2 .modal-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 
     <title>Igor Mariano - Software Developer | Geolocation Specialist</title>
 
@@ -271,7 +512,8 @@
                                     </h3>
                                     <p class="timeline-company">
                                         <i class='bx bx-buildings' aria-hidden="true"></i>
-                                        <a href="https://www.envoylog.com.br/" target="_blank" rel="noopener noreferrer" class="company-link">
+                                        <a href="https://www.envoylog.com.br/" target="_blank" rel="noopener noreferrer"
+                                            class="company-link">
                                             <span data-i18n="experience.envoy.company">Envoy</span>
                                         </a>
                                     </p>
@@ -280,7 +522,10 @@
                             </div>
                             <p class="timeline-period" data-i18n="experience.envoy.period">2023 - Presente</p>
                             <p class="timeline-description" data-i18n="experience.envoy.description">
-                                Plataforma SaaS de gestão de entregas com roteirização inteligente, rastreamento em tempo real e torre de controle. Tecnologia que integra toda a jornada logística com algoritmos avançados de geolocalização, reduzindo custos em até 20% e economizando 6h no trabalho diário.
+                                Plataforma SaaS de gestão de entregas com roteirização inteligente, rastreamento em
+                                tempo real e torre de controle. Tecnologia que integra toda a jornada logística com
+                                algoritmos avançados de geolocalização, reduzindo custos em até 20% e economizando 6h no
+                                trabalho diário.
                             </p>
 
                             <div class="timeline-highlights">
@@ -341,7 +586,8 @@
                                     </h3>
                                     <p class="timeline-company">
                                         <i class='bx bx-package' aria-hidden="true"></i>
-                                        <a href="https://euentrego.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+                                        <a href="https://euentrego.com/" target="_blank" rel="noopener noreferrer"
+                                            class="company-link">
                                             <span data-i18n="experience.euEntrego.company">Eu Entrego</span>
                                         </a>
                                     </p>
@@ -350,7 +596,9 @@
                             </div>
                             <p class="timeline-period" data-i18n="experience.euEntrego.period">2023 - Presente</p>
                             <p class="timeline-description" data-i18n="experience.euEntrego.description">
-                                Referência nacional em entregas rápidas com rede de +250 mil entregadores autônomos. Oferece Ship From Store, entregas Same Day, rastreamento em tempo real e roteirização exclusiva com algoritmo proprietário para máxima otimização logística.
+                                Referência nacional em entregas rápidas com rede de +250 mil entregadores autônomos.
+                                Oferece Ship From Store, entregas Same Day, rastreamento em tempo real e roteirização
+                                exclusiva com algoritmo proprietário para máxima otimização logística.
                             </p>
 
                             <ul class="highlights-list" role="list">
@@ -732,7 +980,7 @@
 
                 <div class="portfolio-grid">
                     <!-- Project 1 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-fitness')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/greey-wheight.jpg" alt="FitnessApp Project" loading="lazy" width="600"
                                 height="400">
@@ -747,17 +995,15 @@
                                     <i class='bx bxl-android' aria-hidden="true"></i>
                                     <i class='bx bxl-react' aria-hidden="true"></i>
                                 </div>
-                                <a href="./projetos/Cartão de Crédito/cartao-credito.html" target="_blank"
-                                    rel="noopener noreferrer" class="portfolio-link"
-                                    data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 2 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-mario')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/Mario-Bros-2.jpg" alt="Mario Bros Movie Website" loading="lazy"
                                 width="600" height="400">
@@ -774,16 +1020,15 @@
                                     <i class='bx bxl-typescript' aria-hidden="true"></i>
                                     <i class='bx bxl-angular' aria-hidden="true"></i>
                                 </div>
-                                <a href="https://filmemario.com/" target="_blank" rel="noopener noreferrer"
-                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 3 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-themis')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/Harvey-Specter.jpg" alt="Projeto Themis" loading="lazy" width="600"
                                 height="400">
@@ -799,16 +1044,15 @@
                                     <i class='bx bxl-css3' aria-hidden="true"></i>
                                     <i class='bx bxl-javascript' aria-hidden="true"></i>
                                 </div>
-                                <a href="./projetos/Jogo da Velha/index.html" target="_blank" rel="noopener noreferrer"
-                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 4 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-login')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/purple-computer.jpg" alt="Login Page" loading="lazy" width="600"
                                 height="400">
@@ -823,17 +1067,15 @@
                                     <i class='bx bxl-html5' aria-hidden="true"></i>
                                     <i class='bx bxl-css3' aria-hidden="true"></i>
                                 </div>
-                                <a href="./projetos/Login-Page/login-page.html" target="_blank"
-                                    rel="noopener noreferrer" class="portfolio-link"
-                                    data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 5 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-ibtech')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/blue-computer.jpg" alt="Ibtech Project" loading="lazy" width="600"
                                 height="400">
@@ -850,16 +1092,15 @@
                                     <i class='bx bxl-javascript' aria-hidden="true"></i>
                                     <i class='bx bxl-react' aria-hidden="true"></i>
                                 </div>
-                                <a href="https://ibtech.sendodigital.com/" target="_blank" rel="noopener noreferrer"
-                                    class="portfolio-link" data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 6 -->
-                    <article class="portfolio-card">
+                    <article class="portfolio-card" onclick="openModal('modal-carros')" style="cursor: pointer;">
                         <div class="portfolio-image">
                             <img src="./images/Luxury-Cars-Garage.jpg" alt="Colecionador de Carros" loading="lazy"
                                 width="600" height="400">
@@ -875,11 +1116,9 @@
                                     <i class='bx bxl-java' aria-hidden="true"></i>
                                     <i class='bx bxl-spring-boot' aria-hidden="true"></i>
                                 </div>
-                                <a href="https://storageapicarros.z13.web.core.windows.net/" target="_blank"
-                                    rel="noopener noreferrer" class="portfolio-link"
-                                    data-i18n-aria="portfolio.viewProject">
+                                <span class="portfolio-link" data-i18n-aria="portfolio.viewProject">
                                     <i class='bx bx-link-external' aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </article>
@@ -904,15 +1143,378 @@
         </div>
     </footer>
 
+    <div class="modal-overlay" id="modal-fitness" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-fitness')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/greey-wheight.jpg" alt="FitnessApp">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Março 2024
+                    </span>
+                    <h3 class="modal-title">FitnessApp</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Aplicativo mobile de fitness e treinos desenvolvido para auxiliar usuários no acompanhamento
+                            de exercícios físicos, controle de séries e repetições, e monitoramento do progresso ao
+                            longo do tempo.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Desenvolvimento completo do front-end mobile utilizando React Native, implementação de
+                            animações fluidas, integração com APIs de saúde e criação de dashboards interativos para
+                            visualização de métricas.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">React Native</span>
+                            <span class="tech-pill">Android</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Firebase</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="./projetos/Cartão de Crédito/cartao-credito.html" target="_blank"
+                            class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-fitness')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-mario" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-mario')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/Mario-Bros-2.jpg" alt="Website Filme Mario Bros">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Abril 2023
+                    </span>
+                    <h3 class="modal-title">Website Filme Mario Bros</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Landing page promocional para o filme Super Mario Bros, apresentando informações sobre
+                            personagens, trailer, sessões de cinema e conteúdo exclusivo do universo Nintendo com design
+                            moderno e interativo.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Desenvolvimento completo do front-end utilizando Angular e TypeScript, criação de animações
+                            CSS avançadas, implementação de carousel de personagens e integração com APIs de cinema para
+                            exibição de sessões.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                            <span class="tech-pill">TypeScript</span>
+                            <span class="tech-pill">Angular</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="https://filmemario.com/" target="_blank" class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-mario')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-themis" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-themis')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/Harvey-Specter.jpg" alt="Projeto Themis">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Agosto 2023
+                    </span>
+                    <h3 class="modal-title">Projeto Themis</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Sistema de gestão jurídica desenvolvido para escritórios de advocacia, permitindo
+                            gerenciamento de processos, clientes, prazos judiciais, documentos e agenda de compromissos
+                            de forma integrada e eficiente.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Desenvolvimento da interface de usuário responsiva, implementação do sistema de autenticação,
+                            criação de dashboards com métricas de processos e integração com calendário para controle de
+                            prazos.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="./projetos/Jogo da Velha/index.html" target="_blank" class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-themis')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-login" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-login')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/purple-computer.jpg" alt="Login Page">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Junho 2023
+                    </span>
+                    <h3 class="modal-title">Login Page</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Interface de autenticação moderna e elegante com animações suaves, validação de formulários
+                            em tempo real, suporte a login social e design responsivo para múltiplos dispositivos.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Design e desenvolvimento completo da interface, implementação de animações CSS, validação de
+                            inputs com feedback visual, criação de transições entre telas de login e registro.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="./projetos/Login-Page/login-page.html" target="_blank" class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-login')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-ibtech" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-ibtech')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/blue-computer.jpg" alt="Ibtech">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Outubro 2023
+                    </span>
+                    <h3 class="modal-title">Ibtech</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Plataforma educacional completa desenvolvida para cursos de tecnologia, oferecendo sistema de
+                            aulas online, exercícios interativos, acompanhamento de progresso e certificação digital.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Desenvolvimento do front-end com React, criação de componentes reutilizáveis, implementação
+                            de player de vídeo customizado, sistema de progresso de aulas e integração com backend para
+                            autenticação.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">React</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="https://ibtech.sendodigital.com/" target="_blank" class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-ibtech')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-carros" onclick="closeModalOnOverlay(event)">
+        <div class="modal-v2">
+            <button class="modal-close" onclick="closeModal('modal-carros')">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="./images/Luxury-Cars-Garage.jpg" alt="Colecionador de Carros">
+                </div>
+                <div class="modal-content">
+                    <span class="modal-date">
+                        <i class='bx bx-calendar'></i>
+                        Dezembro 2024
+                    </span>
+                    <h3 class="modal-title">Colecionador de Carros</h3>
+
+                    <div class="modal-section">
+                        <h4>Descrição</h4>
+                        <p>Sistema full-stack para gestão de coleções de carros, permitindo cadastro detalhado de
+                            veículos, upload de fotos, categorização por marca/modelo/ano e geração de relatórios da
+                            coleção.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Minha Participação</h4>
+                        <p>Desenvolvimento completo full-stack: front-end em Angular com design responsivo, back-end em
+                            Java/Spring Boot com API RESTful, banco de dados e deploy na Azure Cloud.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4>Tecnologias</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill">Angular</span>
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Spring Boot</span>
+                            <span class="tech-pill">Azure</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a href="https://storageapicarros.z13.web.core.windows.net/" target="_blank"
+                            class="modal-btn primary">
+                            <i class='bx bx-link-external'></i>
+                            Ver Projeto
+                        </a>
+                        <button class="modal-btn secondary" onclick="closeModal('modal-carros')">
+                            <i class='bx bx-x'></i>
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- External Scripts -->
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
     <!-- Application Scripts (Standalone - Works without HTTP Server) -->
     <script src="./assets/js/main-standalone.js"></script>
-    
+
     <!-- ALTERNATIVE: Use this line if you are running with HTTP server -->
     <!-- <script type="module" src="./assets/js/main.js"></script> -->
+
+    <!-- Modal Control Scripts -->
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                const activeModal = document.querySelector('.modal-overlay.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
