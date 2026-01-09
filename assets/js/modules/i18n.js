@@ -1,35 +1,36 @@
 /**
- * Internationalization (i18n) Manager
- * Lightweight, dependency-free internationalization system
- * Following industry standards (RFC 5646, BCP 47)
+ * Internationalization (i18n) Module
+ * Responsible for: Language detection, translation loading, and page translation
  *
  * @author Igor Mariano
- * @license MIT
+ * @version 2.0.0
  */
 
 class I18nManager {
-  constructor() {
-    this.currentLocale = this.detectLocale();
+  constructor(options = {}) {
     this.translations = {};
-    this.fallbackLocale = "en";
-    this.supportedLocales = ["pt", "en", "es"];
+    this.fallbackLocale = options.fallbackLocale || "en";
+    this.supportedLocales = options.supportedLocales || ["pt", "en", "es"];
+    this.localesPath = options.localesPath || "./locales";
+    this.currentLocale = this.detectLocale();
   }
 
   /**
-   * Detects user's preferred language based on browser settings
-   * Falls back to English if unsupported
+   * Detect user's preferred language
+   * Priority: localStorage > browser language > fallback
    */
   detectLocale() {
-    const browserLang = navigator.language || navigator.userLanguage;
-    const lang = browserLang.split("-")[0]; // Get base language (pt-BR -> pt)
-
-    // Check localStorage for saved preference
+    // Check localStorage first
     const savedLocale = localStorage.getItem("preferredLocale");
     if (savedLocale && this.supportedLocales.includes(savedLocale)) {
       return savedLocale;
     }
 
-    return this.supportedLocales.includes(lang) ? lang : "en";
+    // Check browser language
+    const browserLang = navigator.language || navigator.userLanguage;
+    const lang = browserLang ? browserLang.split("-")[0] : this.fallbackLocale;
+
+    return this.supportedLocales.includes(lang) ? lang : this.fallbackLocale;
   }
 
   /**
@@ -38,22 +39,26 @@ class I18nManager {
    */
   async loadLocale(locale) {
     try {
-      const response = await fetch(`./locales/${locale}.json`);
-      if (!response.ok) throw new Error(`Failed to load locale: ${locale}`);
+      console.log(`📥 Loading locale: ${locale}`);
+      const response = await fetch(`${this.localesPath}/${locale}.json`);
+
+      if (!response.ok) {
+        throw new Error(`Failed to load locale: ${locale}`);
+      }
 
       this.translations = await response.json();
       this.currentLocale = locale;
       localStorage.setItem("preferredLocale", locale);
-
-      // Update HTML lang attribute for accessibility
       document.documentElement.lang = locale;
 
+      console.log(`✅ Locale ${locale} loaded successfully`);
       return true;
     } catch (error) {
-      console.error("Error loading locale:", error);
+      console.error("❌ Error loading locale:", error);
 
-      // Fallback to English if current locale fails
+      // Fallback to default locale
       if (locale !== this.fallbackLocale) {
+        console.log(`Falling back to ${this.fallbackLocale}`);
         return this.loadLocale(this.fallbackLocale);
       }
       return false;
@@ -61,21 +66,20 @@ class I18nManager {
   }
 
   /**
-   * Get translated string using dot notation path
+   * Get translated string using dot notation
    * @param {string} key - Translation key (e.g., 'nav.home')
-   * @param {object} params - Optional parameters for string interpolation
+   * @param {object} params - Optional parameters for interpolation
    */
   t(key, params = {}) {
     const keys = key.split(".");
     let value = this.translations;
 
-    // Navigate through nested object
     for (const k of keys) {
       if (value && typeof value === "object" && k in value) {
         value = value[k];
       } else {
         console.warn(`Translation key not found: ${key}`);
-        return key; // Return key as fallback
+        return key;
       }
     }
 
@@ -90,16 +94,16 @@ class I18nManager {
   }
 
   /**
-   * Translate all elements with data-i18n attribute
+   * Translate all elements with data-i18n attributes
    */
   translatePage() {
     const elements = document.querySelectorAll("[data-i18n]");
+    console.log(`🔄 Translating ${elements.length} elements...`);
 
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
       const translation = this.t(key);
 
-      // Handle different element types
       if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
         element.placeholder = translation;
       } else {
@@ -107,23 +111,23 @@ class I18nManager {
       }
     });
 
-    // Translate aria-labels for accessibility
-    const ariaElements = document.querySelectorAll("[data-i18n-aria]");
-    ariaElements.forEach((element) => {
+    // Translate aria-labels
+    document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
       const key = element.getAttribute("data-i18n-aria");
       element.setAttribute("aria-label", this.t(key));
     });
 
     // Translate titles
-    const titleElements = document.querySelectorAll("[data-i18n-title]");
-    titleElements.forEach((element) => {
+    document.querySelectorAll("[data-i18n-title]").forEach((element) => {
       const key = element.getAttribute("data-i18n-title");
       element.setAttribute("title", this.t(key));
     });
+
+    console.log("✅ Translation complete");
   }
 
   /**
-   * Change current locale and reload translations
+   * Change locale and reload translations
    * @param {string} locale - New locale code
    */
   async changeLocale(locale) {
@@ -132,11 +136,11 @@ class I18nManager {
       return false;
     }
 
+    console.log(`🌍 Changing locale to: ${locale}`);
     const success = await this.loadLocale(locale);
+
     if (success) {
       this.translatePage();
-
-      // Dispatch custom event for other components
       window.dispatchEvent(
         new CustomEvent("localeChanged", {
           detail: { locale: this.currentLocale },
@@ -162,5 +166,4 @@ class I18nManager {
   }
 }
 
-// Export for use in other modules
 export default I18nManager;
