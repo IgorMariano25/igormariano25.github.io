@@ -85,8 +85,6 @@ class PortfolioApp {
    * Initialize all application modules
    */
   async init() {
-    console.log("🚀 Initializing Portfolio Application...");
-
     try {
       // 1. Load translations first
       await this.i18n.loadLocale(this.i18n.getCurrentLocale());
@@ -111,10 +109,8 @@ class PortfolioApp {
 
       // 5. Setup event listeners
       this.setupEventListeners();
-
-      console.log("✅ Portfolio Application Initialized Successfully");
     } catch (error) {
-      console.error("❌ Error initializing application:", error);
+      console.error("Error initializing application:", error);
     }
   }
 
@@ -125,22 +121,10 @@ class PortfolioApp {
     // Handle page visibility changes (pause animations when hidden)
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
-        console.log("Page hidden - pausing animations");
         this.animations.pauseTyped();
       } else {
-        console.log("Page visible - resuming animations");
         this.animations.resumeTyped();
       }
-    });
-
-    // Listen to locale changes
-    window.addEventListener("localeChanged", (e) => {
-      console.log("Locale changed to:", e.detail.locale);
-    });
-
-    // Listen to theme changes
-    window.addEventListener("themeChanged", (e) => {
-      console.log("Theme changed to:", e.detail.theme);
     });
   }
 

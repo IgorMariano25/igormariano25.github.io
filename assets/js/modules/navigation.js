@@ -34,7 +34,6 @@ class NavigationManager {
     this.initActiveSection();
     this.initSmoothScroll();
 
-    console.log("✅ Navigation initialized");
     return this;
   }
 
@@ -43,7 +42,6 @@ class NavigationManager {
    */
   initMobileMenu() {
     if (!this.menuToggle || !this.nav) {
-      console.warn("Menu toggle or nav element not found");
       return;
     }
 
@@ -111,11 +109,8 @@ class NavigationManager {
     const navLinks = document.querySelectorAll(this.navLinkSelector);
 
     if (sections.length === 0) {
-      console.warn("No sections found for active detection");
       return;
     }
-
-    console.log(`Monitoring ${sections.length} sections`);
 
     const updateActiveLink = () => {
       let current = "home";
@@ -163,7 +158,6 @@ class NavigationManager {
    */
   initSmoothScroll() {
     const anchors = document.querySelectorAll('a[href^="#"]');
-    console.log(`Found ${anchors.length} anchor links`);
 
     anchors.forEach((anchor) => {
       anchor.addEventListener("click", (e) => {

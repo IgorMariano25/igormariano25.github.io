@@ -47,7 +47,6 @@ class AnimationsManager {
     this.initScrollReveal();
     this.initTyped();
 
-    console.log("✅ Animations initialized");
     return this;
   }
 
@@ -56,7 +55,6 @@ class AnimationsManager {
    */
   initScrollReveal() {
     if (typeof ScrollReveal === "undefined") {
-      console.warn("ScrollReveal not loaded");
       return;
     }
 
@@ -88,8 +86,6 @@ class AnimationsManager {
       ...legacyConfig,
       origin: "right",
     });
-
-    console.log("✅ ScrollReveal animations configured");
   }
 
   /**
@@ -97,7 +93,6 @@ class AnimationsManager {
    */
   initTyped() {
     if (typeof Typed === "undefined") {
-      console.warn("Typed.js not loaded");
       return;
     }
 
@@ -109,11 +104,8 @@ class AnimationsManager {
     }
 
     if (!typedElement) {
-      console.log("Typed element not found");
       return;
     }
-
-    console.log("Initializing Typed.js animation");
 
     this.typedInstance = new Typed(typedElement, {
       strings: this.typedConfig.strings,
@@ -122,8 +114,6 @@ class AnimationsManager {
       backDelay: this.typedConfig.backDelay,
       loop: this.typedConfig.loop,
     });
-
-    console.log("✅ Typed.js animation started");
   }
 
   /**
@@ -143,7 +133,6 @@ class AnimationsManager {
    */
   reveal(selector, options = {}) {
     if (!this.scrollRevealInstance) {
-      console.warn("ScrollReveal not initialized");
       return;
     }
     this.scrollRevealInstance.reveal(selector, options);

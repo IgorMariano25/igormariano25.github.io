@@ -37,7 +37,6 @@ class I18nManager {
 
   async loadLocale(locale) {
     try {
-      console.log(`📥 Loading locale: ${locale}`);
       // Cache buster para garantir que o arquivo mais recente seja carregado
       const cacheBuster = `?v=${Date.now()}`;
       const response = await fetch(
@@ -53,13 +52,11 @@ class I18nManager {
       localStorage.setItem("preferredLocale", locale);
       document.documentElement.lang = locale;
 
-      console.log(`✅ Locale ${locale} loaded successfully`);
       return true;
     } catch (error) {
-      console.error("❌ Error loading locale:", error);
+      console.error("Error loading locale:", error);
 
       if (locale !== this.fallbackLocale) {
-        console.log(`Falling back to ${this.fallbackLocale}`);
         return this.loadLocale(this.fallbackLocale);
       }
       return false;
@@ -74,7 +71,6 @@ class I18nManager {
       if (value && typeof value === "object" && k in value) {
         value = value[k];
       } else {
-        console.warn(`Translation key not found: ${key}`);
         return key;
       }
     }
@@ -90,9 +86,6 @@ class I18nManager {
 
   translatePage() {
     const elements = document.querySelectorAll("[data-i18n]");
-    console.log(`🔄 Translating ${elements.length} elements...`);
-    console.log(`📌 Current locale: ${this.currentLocale}`);
-    console.log(`📌 about.title value: "${this.t("about.title")}"`);
 
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
@@ -104,17 +97,11 @@ class I18nManager {
         // Se tem data-i18n-split, divide o texto e aplica gradient na última palavra
         if (element.hasAttribute("data-i18n-split")) {
           const words = translation.trim().split(" ");
-          console.log(
-            `🎨 Splitting key "${key}": "${translation}" into`,
-            words
-          );
           if (words.length > 1) {
             const lastWord = words.pop();
             const firstPart = words.join(" ");
             element.innerHTML = `<span>${firstPart}</span> <span class="gradient-text">${lastWord}</span>`;
-            console.log(`✅ Applied gradient to: "${lastWord}"`);
           } else {
-            console.log(`⚠️ Only one word found, no split applied`);
             element.textContent = translation;
           }
         } else {
@@ -132,8 +119,6 @@ class I18nManager {
       const key = element.getAttribute("data-i18n-title");
       element.setAttribute("title", this.t(key));
     });
-
-    console.log("✅ Translation complete");
   }
 
   async changeLocale(locale) {
@@ -142,7 +127,6 @@ class I18nManager {
       return false;
     }
 
-    console.log(`🌍 Changing locale to: ${locale}`);
     const success = await this.loadLocale(locale);
 
     if (success) {
@@ -197,9 +181,6 @@ class ThemeManager {
     const themeToggle = document.querySelector(this.toggleSelector);
     if (themeToggle) {
       themeToggle.addEventListener("click", () => this.toggle());
-      console.log("✅ Theme toggle button attached");
-    } else {
-      console.warn("❌ Theme toggle button not found");
     }
 
     window
@@ -221,8 +202,6 @@ class ThemeManager {
     if (icon) {
       icon.className = theme === "dark" ? this.darkIcon : this.lightIcon;
     }
-
-    console.log(`Theme applied: ${theme}`);
   }
 
   toggle() {
@@ -236,7 +215,6 @@ class ThemeManager {
       })
     );
 
-    console.log(`Theme toggled to: ${newTheme}`);
     return newTheme;
   }
 
@@ -279,13 +257,11 @@ class NavigationManager {
     this.initActiveSection();
     this.initSmoothScroll();
 
-    console.log("✅ Navigation initialized");
     return this;
   }
 
   initMobileMenu() {
     if (!this.menuToggle || !this.nav) {
-      console.warn("Menu toggle or nav element not found");
       return;
     }
 
@@ -339,11 +315,8 @@ class NavigationManager {
     const navLinks = document.querySelectorAll(this.navLinkSelector);
 
     if (sections.length === 0) {
-      console.warn("No sections found for active detection");
       return;
     }
-
-    console.log(`Monitoring ${sections.length} sections`);
 
     const updateActiveLink = () => {
       let current = "home";
@@ -386,7 +359,6 @@ class NavigationManager {
 
   initSmoothScroll() {
     const anchors = document.querySelectorAll('a[href^="#"]');
-    console.log(`Found ${anchors.length} anchor links`);
 
     anchors.forEach((anchor) => {
       anchor.addEventListener("click", (e) => {
@@ -440,14 +412,9 @@ class ScrollEffectsManager {
     this.header = document.querySelector(this.headerSelector);
     this.backToTop = document.querySelector(this.backToTopSelector);
 
-    if (!this.header) {
-      console.warn("Header element not found");
-    }
-
     this.initScrollHandler();
     this.initBackToTop();
 
-    console.log("✅ Scroll effects initialized");
     return this;
   }
 
@@ -485,7 +452,6 @@ class ScrollEffectsManager {
 
   initBackToTop() {
     if (!this.backToTop) {
-      console.warn("Back to top button not found");
       return;
     }
 
@@ -496,8 +462,6 @@ class ScrollEffectsManager {
       e.stopPropagation();
       this.scrollToTop();
     });
-
-    console.log("✅ Back to top button initialized");
   }
 
   showBackToTop() {
@@ -516,7 +480,6 @@ class ScrollEffectsManager {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    console.log("Scrolling to top");
   }
 
   onScroll(callback) {
@@ -573,13 +536,11 @@ class AnimationsManager {
     this.initScrollReveal();
     this.initTyped();
 
-    console.log("✅ Animations initialized");
     return this;
   }
 
   initScrollReveal() {
     if (typeof ScrollReveal === "undefined") {
-      console.warn("ScrollReveal not loaded");
       return;
     }
 
@@ -611,13 +572,10 @@ class AnimationsManager {
       ...legacyConfig,
       origin: "right",
     });
-
-    console.log("✅ ScrollReveal animations configured");
   }
 
   initTyped() {
     if (typeof Typed === "undefined") {
-      console.warn("Typed.js not loaded");
       return;
     }
 
@@ -628,11 +586,8 @@ class AnimationsManager {
     }
 
     if (!typedElement) {
-      console.log("Typed element not found");
       return;
     }
-
-    console.log("Initializing Typed.js animation");
 
     this.typedInstance = new Typed(typedElement, {
       strings: this.typedConfig.strings,
@@ -641,8 +596,6 @@ class AnimationsManager {
       backDelay: this.typedConfig.backDelay,
       loop: this.typedConfig.loop,
     });
-
-    console.log("✅ Typed.js animation started");
   }
 
   destroyTyped() {
@@ -654,7 +607,6 @@ class AnimationsManager {
 
   reveal(selector, options = {}) {
     if (!this.scrollRevealInstance) {
-      console.warn("ScrollReveal not initialized");
       return;
     }
     this.scrollRevealInstance.reveal(selector, options);
@@ -695,17 +647,14 @@ class LanguageSelectorManager {
 
   init() {
     const buttons = document.querySelectorAll(this.buttonSelector);
-    console.log(`Found ${buttons.length} language buttons`);
 
     if (buttons.length === 0) {
-      console.warn("❌ No language buttons found");
       return this;
     }
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", async () => {
         const lang = btn.getAttribute("data-lang");
-        console.log(`Language button clicked: ${lang}`);
 
         await this.i18n.changeLocale(lang);
         this.updateButtons();
@@ -718,7 +667,6 @@ class LanguageSelectorManager {
       this.updateButtons();
     });
 
-    console.log("✅ Language selector initialized");
     return this;
   }
 
@@ -810,8 +758,6 @@ class PortfolioApp {
   }
 
   async init() {
-    console.log("🚀 Initializing Portfolio Application...");
-
     try {
       // 1. Load translations first
       await this.i18n.loadLocale(this.i18n.getCurrentLocale());
@@ -836,30 +782,18 @@ class PortfolioApp {
 
       // 5. Setup event listeners
       this.setupEventListeners();
-
-      console.log("✅ Portfolio Application Initialized Successfully");
     } catch (error) {
-      console.error("❌ Error initializing application:", error);
+      console.error("Error initializing application:", error);
     }
   }
 
   setupEventListeners() {
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
-        console.log("Page hidden - pausing animations");
         this.animations.pauseTyped();
       } else {
-        console.log("Page visible - resuming animations");
         this.animations.resumeTyped();
       }
-    });
-
-    window.addEventListener("localeChanged", (e) => {
-      console.log("Locale changed to:", e.detail.locale);
-    });
-
-    window.addEventListener("themeChanged", (e) => {
-      console.log("Theme changed to:", e.detail.theme);
     });
   }
 

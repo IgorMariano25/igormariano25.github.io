@@ -41,9 +41,6 @@ class ThemeManager {
     const themeToggle = document.querySelector(this.toggleSelector);
     if (themeToggle) {
       themeToggle.addEventListener("click", () => this.toggle());
-      console.log("✅ Theme toggle button attached");
-    } else {
-      console.warn("❌ Theme toggle button not found");
     }
 
     // Listen for system theme changes
@@ -72,8 +69,6 @@ class ThemeManager {
     if (icon) {
       icon.className = theme === "dark" ? this.darkIcon : this.lightIcon;
     }
-
-    console.log(`Theme applied: ${theme}`);
   }
 
   /**
@@ -91,7 +86,6 @@ class ThemeManager {
       })
     );
 
-    console.log(`Theme toggled to: ${newTheme}`);
     return newTheme;
   }
 

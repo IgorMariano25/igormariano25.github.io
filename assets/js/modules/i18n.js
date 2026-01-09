@@ -39,7 +39,6 @@ class I18nManager {
    */
   async loadLocale(locale) {
     try {
-      console.log(`📥 Loading locale: ${locale}`);
       const response = await fetch(`${this.localesPath}/${locale}.json`);
 
       if (!response.ok) {
@@ -51,14 +50,12 @@ class I18nManager {
       localStorage.setItem("preferredLocale", locale);
       document.documentElement.lang = locale;
 
-      console.log(`✅ Locale ${locale} loaded successfully`);
       return true;
     } catch (error) {
-      console.error("❌ Error loading locale:", error);
+      console.error("Error loading locale:", error);
 
       // Fallback to default locale
       if (locale !== this.fallbackLocale) {
-        console.log(`Falling back to ${this.fallbackLocale}`);
         return this.loadLocale(this.fallbackLocale);
       }
       return false;
@@ -78,7 +75,6 @@ class I18nManager {
       if (value && typeof value === "object" && k in value) {
         value = value[k];
       } else {
-        console.warn(`Translation key not found: ${key}`);
         return key;
       }
     }
@@ -98,7 +94,6 @@ class I18nManager {
    */
   translatePage() {
     const elements = document.querySelectorAll("[data-i18n]");
-    console.log(`🔄 Translating ${elements.length} elements...`);
 
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
@@ -122,8 +117,6 @@ class I18nManager {
       const key = element.getAttribute("data-i18n-title");
       element.setAttribute("title", this.t(key));
     });
-
-    console.log("✅ Translation complete");
   }
 
   /**
@@ -132,11 +125,9 @@ class I18nManager {
    */
   async changeLocale(locale) {
     if (!this.supportedLocales.includes(locale)) {
-      console.error(`Unsupported locale: ${locale}`);
       return false;
     }
 
-    console.log(`🌍 Changing locale to: ${locale}`);
     const success = await this.loadLocale(locale);
 
     if (success) {

@@ -26,14 +26,9 @@ class ScrollEffectsManager {
     this.header = document.querySelector(this.headerSelector);
     this.backToTop = document.querySelector(this.backToTopSelector);
 
-    if (!this.header) {
-      console.warn("Header element not found");
-    }
-
     this.initScrollHandler();
     this.initBackToTop();
 
-    console.log("✅ Scroll effects initialized");
     return this;
   }
 
@@ -81,7 +76,6 @@ class ScrollEffectsManager {
    */
   initBackToTop() {
     if (!this.backToTop) {
-      console.warn("Back to top button not found");
       return;
     }
 
@@ -93,8 +87,6 @@ class ScrollEffectsManager {
       e.stopPropagation();
       this.scrollToTop();
     });
-
-    console.log("✅ Back to top button initialized");
   }
 
   /**
@@ -122,7 +114,6 @@ class ScrollEffectsManager {
    */
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    console.log("Scrolling to top");
   }
 
   /**

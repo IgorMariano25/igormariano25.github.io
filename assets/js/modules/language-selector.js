@@ -18,17 +18,14 @@ class LanguageSelectorManager {
    */
   init() {
     const buttons = document.querySelectorAll(this.buttonSelector);
-    console.log(`Found ${buttons.length} language buttons`);
 
     if (buttons.length === 0) {
-      console.warn("❌ No language buttons found");
       return this;
     }
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", async () => {
         const lang = btn.getAttribute("data-lang");
-        console.log(`Language button clicked: ${lang}`);
 
         await this.i18n.changeLocale(lang);
         this.updateButtons();
@@ -43,7 +40,6 @@ class LanguageSelectorManager {
       this.updateButtons();
     });
 
-    console.log("✅ Language selector initialized");
     return this;
   }
 
